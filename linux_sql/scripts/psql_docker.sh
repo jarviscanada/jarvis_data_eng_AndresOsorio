@@ -1,6 +1,7 @@
 #! /bin/bash
 
 # must be signed in as centos (sudo su centos)
+echo $(whoami)
 
 # get arguments
 action=$1
@@ -59,14 +60,15 @@ create() {
 
 	# create a container using psql image with name=jrvs-psql
 	docker run --name jrvs-psql -e POSTGRES_PASSWORD=${db_password} -e POSTGRES_USER=${db_username} -d -v pgdata:/var/lib/postgresql/data -p 5432:5432 postgres	
-	# exit with exit status of the creation of container
-	# exit $?
 
 	# confirm that the container was created
 	if ! created
 	then
 		echo "container could not be created"; exit 1
 	fi
+
+	# exit with exit status of the creation of container
+	 exit $?
 }
 
 # start docker is docker deamon is not running
@@ -77,7 +79,7 @@ case $action in
 	then
 		create
 	else
-		echo "wrong number of args for create action"
+		echo "must provide username and password args for the create option"
 		exit 1
 	fi
 	;;
