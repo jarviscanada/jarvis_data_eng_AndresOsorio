@@ -1,7 +1,10 @@
 #! /bin/bash
 
 # must be signed in as centos (sudo su centos)
-echo $(whoami)
+if [ $(whoami) != "centos" ]; then
+    echo "must be signed in as centos"
+    exit 1
+fi
 
 # get arguments
 action=$1

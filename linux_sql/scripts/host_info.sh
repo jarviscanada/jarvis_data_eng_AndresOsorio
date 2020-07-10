@@ -36,37 +36,31 @@ fi
 lscpu_out=$(lscpu)
 mem_info=$(cat /proc/meminfo)
 
+############### functions ###############
+
+info() {
+    echo "$lscpu_out"
+}
+
 ############### hardware info ############### 
 
 hostname=$(hostname -f)
 
 # match CPU(s): with egrep; print the 2nd field with awk; xargs is a trick to 
 # remove leading and trailing whote spaces
-cpu_number=$(echo "$lscpu_out" | egrep "^CPU\(s\):" | awk '{print $2}' | xargs)
+cpu_number=$(info | egrep "^CPU\(s\):" | awk '{print $2}' | xargs)
 
-cpu_architecture=$(echo "$lscpu_out" | egrep "Architecture" | awk '{print $2}' | xargs)
+cpu_architecture=$(info | egrep "Architecture" | awk '{print $2}' | xargs)
 
-cpu_model=$(echo "$lscpu_out" | egrep "Model name" | awk '{print $3, $4, $5, $6, $7}' | xargs)
+cpu_model=$(info | egrep "Model name" | awk '{print $3, $4, $5, $6, $7}' | xargs)
 
-cpu_mhz=$(echo "$lscpu_out" | egrep "CPU MHz" | awk '{print $3}' | xargs)
+cpu_mhz=$(info | egrep "CPU MHz" | awk '{print $3}' | xargs)
 
-L2_cache=$(echo "$lscpu_out" | egrep "L2" | awk '{print $3}' | sed s/K// |  xargs) 
+L2_cache=$(info | egrep "L2" | awk '{print $3}' | sed s/K// |  xargs) 
 
 total_mem=$(echo "$mem_info" | egrep "MemTotal" | awk '{print $2}' | xargs)
 
 timestamp=$(date +'%y-%m-%d %T')
-
-############### print vars ############### 
-
-# enclosing in "" doesn't supress whitespace from the input
-# echo "$hostname"
-# echo "$cpu_number"
-# echo "$cpu_architecture"
-# echo "$cpu_model"
-# echo "$cpu_mhz"
-# echo "$L2_cache"
-# echo "$total_mem"
-# echo "$timestamp"
 
 ############### PSQL ############### 
 

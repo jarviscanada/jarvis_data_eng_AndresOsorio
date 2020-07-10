@@ -34,21 +34,27 @@ fi
 
 ############### tmp vars ############### 
 
-mem_info=$(cat /proc/meminfo)
+# mem_info=$(cat /proc/meminfo)
 
 # '-S m' switches output to Megabytes (MB), '-t' adds a timestamp
 v_mem_info=$(vmstat -S m -t)
 
+############### functions ############### 
+
+info() {
+    echo "$v_mem_info"
+}
+
 ############### usage info ############### 
 
 # in MB
-memory_free=$(echo "$v_mem_info" | tail -1 | awk '{print $4}' | xargs) 
+memory_free=$(info | tail -1 | awk '{print $4}' | xargs) 
 
 # in percentage
-cpu_idle=$(echo "$v_mem_info" | tail -1 | awk '{print $15}' | xargs)
+cpu_idle=$(info | tail -1 | awk '{print $15}' | xargs)
 
 # in percentage
-cpu_kernel=$(echo "$v_mem_info" | tail -1 | awk '{print $14}' | xargs)
+cpu_kernel=$(info | tail -1 | awk '{print $14}' | xargs)
 
 # number of disk I/O; '-d' runs disk statistics
 disk_io=$(echo "$(vmstat -d)" | tail -1 | awk '{print $10}' | xargs)
@@ -57,15 +63,6 @@ disk_io=$(echo "$(vmstat -d)" | tail -1 | awk '{print $10}' | xargs)
 disk_available=$(echo "$(df -BMB /)" | tail -1 | awk '{print $4}' | sed s/MB// | xargs)
 
 timestamp=$(date +'%y-%m-%d %T')
-
-############### print vars ############### 
-
-# echo "$memory_free"
-# echo "$cpu_idle"
-# echo "$cpu_kernel"
-# echo "$disk_io"
-# echo "$disk_available"
-# echo "$timestamp"
 
 ############### PSQL ############### 
 
