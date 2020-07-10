@@ -4,7 +4,7 @@
 -- create host_info table
 CREATE TABLE IF NOT EXISTS PUBLIC.host_info (
     id                  SERIAL NOT NULL PRIMARY KEY,
-    hostname            VARCHAR NOT NULL,
+    hostname            VARCHAR NOT NULL UNIQUE,
     cpu_number          INTEGER NOT NULL,
     cpu_architecture    VARCHAR NOT NULL, 
     cpu_model           VARCHAR NOT NULL, 
@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS PUBLIC.host_info (
 
 -- create host_usage table
 CREATE TABLE IF NOT EXISTS PUBLIC.host_usage (
-    "timestamp"         TIMESTAMP NOT NULL,
+    timestamp         VARCHAR NOT NULL,
     host_id             SERIAL REFERENCES host_info(id),
     memory_free         INTEGER NOT NULL,
     cpu_idle            INTEGER NOT NULL,
