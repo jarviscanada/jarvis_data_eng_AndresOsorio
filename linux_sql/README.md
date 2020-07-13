@@ -122,7 +122,7 @@ usage examples
 ./host_usage localhost 5432 host_agent username userpassword
 ```
 - **crontab**: this script creates a new cron job in the cron table; it makes
-    the script host_usage a cron job to be executed every minute automatically
+    the script [host_usage.sh](scripts/host_usage.sh) a cron job to be executed every minute automatically
 ```bash
 # to edit cron jobs - opens up a text editor to enter/edit cron jobs
 crontab -e
@@ -133,10 +133,11 @@ crontab -e
 # list current cron jobs
 crontab -l 
 ```
-- [queries.sql](sql/queries.sql): the queries in this file return 2 things from the information collected in the 
+- [queries.sql](sql/queries.sql): the queries in this file return 3 things from the information collected in the 
     tables host_info and host_usage:
     - group hosts by CPU number and sort by their memory size in descending order(within each cpu_number group)
     - average used memory in percentage over 5 mins interval for each host
+    - node failure (over 5-min intervals) 
     
     This data informs how much resources are actually being used by the nodes in the cluster and is
     therefore vital to determining whether to scale up or down to meet usage demand.
