@@ -11,12 +11,12 @@ CREATE TABLE IF NOT EXISTS PUBLIC.host_info (
     cpu_mhz             VARCHAR NOT NULL,
     L2_cache            INTEGER NOT NULL,
     total_mem           INTEGER NOT NULL,
-    timestamp           VARCHAR NOT NULL
+    timestamp           TIMESTAMP NOT NULL
 );
 
 -- create host_usage table
 CREATE TABLE IF NOT EXISTS PUBLIC.host_usage (
-    timestamp         VARCHAR NOT NULL,
+    timestamp           TIMESTAMP NOT NULL,
     host_id             SERIAL REFERENCES host_info(id),
     memory_free         INTEGER NOT NULL,
     cpu_idle            INTEGER NOT NULL,

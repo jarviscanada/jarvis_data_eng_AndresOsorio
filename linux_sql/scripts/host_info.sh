@@ -60,7 +60,7 @@ L2_cache=$(info | egrep "L2" | awk '{print $3}' | sed s/K// |  xargs)
 
 total_mem=$(echo "$mem_info" | egrep "MemTotal" | awk '{print $2}' | xargs)
 
-timestamp=$(date +'%y-%m-%d %T')
+timestamp=$(date +'%Y-%m-%d %T')
 
 ############### PSQL ############### 
 

@@ -62,7 +62,7 @@ disk_io=$(echo "$(vmstat -d)" | tail -1 | awk '{print $10}' | xargs)
 # in MB; root directory available disk; '-BMB' shows ouitput in blocks of MB
 disk_available=$(echo "$(df -BMB /)" | tail -1 | awk '{print $4}' | sed s/MB// | xargs)
 
-timestamp=$(date +'%y-%m-%d %T')
+timestamp=$(date +'%Y-%m-%d %T')
 
 ############### PSQL ############### 
 
