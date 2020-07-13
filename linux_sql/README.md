@@ -57,29 +57,29 @@ only collected once (as they are assumed to be static), while the usage data is
 collected every minute (since it changes constantly); the tables are linked through their
 id and host_id columns ('host_id' in host_usage references 'id' in host_info).
 
-- host_info
-    - id: serial data type; autoincrements with each entry; primary key
-    - hostname: fully qualified hostname
-    - cpu_number: number of cores
-    - cpu_architecture: 32-bit / 64-bit
-    - cpu_model: model of the cpu
-    - cpu_mhz: speed of the processor in mhz
-    - l2_cache: amount of level 2 cache in kB
-    - total_mem: total memory in kB
-    - timestamp: current time in UTC timezone
+- `host_info`
+    - `id`: serial data type; autoincrements with each entry; primary key
+    - `hostname`: fully qualified hostname
+    - `cpu_number`: number of cores
+    - `cpu_architecture`: 32-bit / 64-bit
+    - `cpu_model`: model of the cpu
+    - `cpu_mhz`: speed of the processor in mhz
+    - `L2_cache`: amount of level 2 cache in kB
+    - `total_mem`: total memory in kB
+    - `timestamp`: current time in UTC timezone
 
 id | hostname | cpu_number | cpu_architecture | cpu_model | cpu_mhz | L2_cache | total_mem | timestamp 
 ---|----------|------------|------------------|-----------|---------|----------|-----------|----------- 
 1  | jrvis-remote..| 2| x85_64 | Intel(R) Xeon(R) CPU @ 2.30GHz | 2300.000 | 256 | 601324 | 2019-05-29 17:49:53
 ...|...|...|...|...|...|...|...|...|
-- host_usage
-    - timestamp: current time in UTC timezone
-    - host_id: the host id from the host_info table
-    - memory_free: free memory in MB
-    - cpu_idle: percentage of cpu that is idle
-    - cpu_kernel: percentage of cpu that is being used by the kernel
-    - disk_io: number of current disk I/O processes
-    - disk_available: root directory available disk in MB
+- `host_usage`
+    - `timestamp`: current time in UTC timezone
+    - `host_id`: the host id from the host_info table
+    - `memory_free`: free memory in MB
+    - `cpu_idle`: percentage of cpu that is idle
+    - `cpu_kernel`: percentage of cpu that is being used by the kernel
+    - `disk_io`: number of current disk I/O processes
+    - `disk_available`: root directory available disk in MB
 
 timestamp | host_id | memory_free | cpu_idle | cpu_kernel | disk_io | disk_available
 ----------|---------|-------------|----------|------------|---------|----------------
@@ -141,7 +141,7 @@ crontab -l
     This data informs how much resources are actually being used by the nodes in the cluster and is
     therefore vital to determining whether to scale up or down to meet usage demand.
 ```bash
-# connect to the psql server adnd run the sql commands in queries.sql
+# connect to the psql server and run the sql commands in queries.sql
 psql -h localhost -d host_agent -f queires.sql -U username
 ```
 
