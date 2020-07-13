@@ -14,7 +14,7 @@ the data is persisted in a PSQL instance.
 ./psql_docker create username userpassword
 ```
 - Create tables using ddl.sql
-```
+```bash
 # to be able to enter the psql server without a password prompt
 export PGPASSWORD="userpassword" 
 # enter the psql instance
@@ -27,11 +27,11 @@ CREATE DATABASE host_agent;
 psql -h localhost -d host_agent -f ddl.sql -U username
 ```
 - Insert hardware specs data into the db using host_info.sh
-```
+```bash
 ./host_info.sh localhost 5432 host_agent username userpassword
 ```
 - Insert hardware usage data into the db using host_usage.sh
-```
+```bash
 ./host_usage.sh localhost 5432 host_agent username userpassword
 ```
 - Crontab setup
@@ -44,17 +44,17 @@ crontab -e
 ```
 
 ## Architecture Diagram
-![Program Architecture](/assets/architecture.png)
+![Program Architecture](assets/architecture.png)
 
 ## Database Modeling
 The column 'host_id' in host_usage references 'id' in host_info.
-- `host_info`
+- host_info
 
 id | hostname | cpu_number | cpu_architecture | cpu_model | cpu_mhz | L2_cache | total_mem | timestamp 
 ---|----------|------------|------------------|-----------|---------|----------|-----------|----------- 
 1  | jrvis-remote..| 2| x85_64 | Intel(R) Xeon(R) CPU @ 2.30GHz | 2300.000 | 256 | 601324 | 2019-05-29 17:49:53
 ...|...|...|...|...|...|...|...|...|
-- `host_usage`
+- host_usage
 
 timestamp | host_id | memory_free | cpu_idle | cpu_kernel | disk_io | disk_available
 ----------|---------|-------------|----------|------------|---------|----------------
@@ -67,7 +67,7 @@ Shell script descirption and usage (use markdown code block for script usage)
     as the psql server to preserve the data collected; the script can be used to 
     create the container (must provide username and userpassword for this option),
     start it (if it already exists) and stop it
-```
+```bash
 # usage options
 ./psql_docker [create | start | stop] [username password]
 # usage examples
@@ -80,7 +80,7 @@ Shell script descirption and usage (use markdown code block for script usage)
     first one to be called after the container creation, the creation of the database 
     'host_agent' and tables 'host_info' and 'host_usage' is also included in this script
     (before inserting data into the database) to avoid doing those tasks manually
-```
+```bash
 # usage options
 ./host_info [hostname portnumber dbname username userpassword]
 # usage examples
@@ -88,7 +88,7 @@ Shell script descirption and usage (use markdown code block for script usage)
 ```
 - **host_usage.sh**: this script collects the host's usage data at that point in timne 
     and inserts it into the table host_usage in the database
-```
+```bash
 # usage options
 ./host_usage [hostname portnumber dbname username userpassword]
 usage examples
@@ -96,7 +96,7 @@ usage examples
 ```
 - **crontab**: this script creates a new cron job in the cron table; it makes
     the script host_usage a cron job to be executed every minute automatically
-```
+```bash
 # to edit cron jobs - opens up a text editor to enter/edit cron jobsto edit cron jobs - opens up a text editor to enter/edit cron jobs
 crontab -e
 # enter this in the text editor; each cron job must be in one line; path must be absolute
@@ -111,6 +111,10 @@ crontab -l
     
     This data informs how much resources are actually being used by the nodes in the cluster and is
     therefore vital to determining whether to scale up or down to meet the usage demand.
+```bash
+# connect to the psql server adnd run the sql commands in queries.sql
+psql -h localhost -d host_agent -f queires.sql -U username
+```
 
 ## Improvements 
 - **handle hardware update**: run the host_info.sh script every few months or so to capture
