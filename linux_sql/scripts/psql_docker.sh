@@ -1,12 +1,16 @@
 #! /bin/bash
 
 # must be signed in as centos (sudo su centos)
-echo $(whoami)
+if [ $(whoami) != "centos" ]; then
+    echo "must be signed in as centos"
+    exit 1
+fi
 
 # get arguments
 action=$1
 db_username=$2
 db_password=$3
+export PGPASSWORD="$db_password"
 
 # check that first arg is valid
 case $action in
@@ -59,7 +63,7 @@ create() {
 	docker volume create pgdata
 
 	# create a container using psql image with name=jrvs-psql
-	docker run --name jrvs-psql -e POSTGRES_PASSWORD=${db_password} -e POSTGRES_USER=${db_username} -d -v pgdata:/var/lib/postgresql/data -p 5432:5432 postgres	
+	docker run --name jrvs-psql -e POSTGRES_PASSWORD=$PGPASSWORD -e POSTGRES_USER=${db_username} -d -v pgdata:/var/lib/postgresql/data -p 5432:5432 postgres	
 
 	# confirm that the container was created
 	if ! created
