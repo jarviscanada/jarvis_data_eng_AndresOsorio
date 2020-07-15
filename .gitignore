@@ -1,3 +1,4 @@
+# maven projects
 target/
 *.class
 *.jar
@@ -7,3 +8,7 @@ target/
 *.iml
 .idea/
 .eclipse
+
+# extra files
+helper*
+practice
