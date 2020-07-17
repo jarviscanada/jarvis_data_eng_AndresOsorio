@@ -1,63 +1,31 @@
 package ca.jrvs.apps.grep;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.List;
+import org.apache.log4j.BasicConfigurator;
 
-public interface JavaGrep {
+public class JavaGrep {
 
-  /**
-   * Top level search workflow
-   *
-   * @throws IOException
-   */
-  void process() throws IOException;
+  public static void main(String[] args) {
+    if (args.length != 3) {
+      throw new IllegalArgumentException("USAGE: JavaGrep regex rootPath outfile");
+    }
 
-  /**
-   * Traverse a given directory and return all files
-   *
-   * @param rootDir input directory
-   * @return files under the rootDir
-   */
-  List<File> listFiles(String rootDir);
+    // Use default logger config
+    BasicConfigurator.configure();
 
-  /**
-   * Read a file and return all the lines
-   *
-   * Explore: {@link java.io.FileReader}, {@link java.io.BufferedReader}, and character encoding
-   *
-   * @param inputFile file to be read
-   * @return lines
-   * @throws IllegalArgumentException if a given inputFile is not a file
-   */
-  List<String> readLines(File inputFile) throws IllegalArgumentException;
+    // JavaGrepImp object to work with
+    JavaGrepImp imp = new JavaGrepImp();
 
-  /**
-   * check if a line contains the regex pattern (passed by user)
-   * @param line input string
-   * @return true if there is a match
-   */
-  boolean containsPattern(String line);
+    // Set the object's fields according to the args given by user
+    imp.setRegex(args[0]);
+    imp.setRootPath(args[1]);
+    imp.setOutFile(args[2]);
 
-  /**
-   * Write lines to a file
-   *
-   * Explore: {@link java.io.FileOutputStream}, {@link java.io.OutputStreamWriter}, and {@link java.io.BufferedWriter}
-   *
-   * @param lines matched lines
-   * @throws IOException if write failed
-   */
-  void writeToFile(List<String> lines) throws IOException;
-
-  String getRootPath();
-
-  void setRootPath(String rootPath);
-
-  String getRegex();
-
-  void setRegex(String regex);
-
-  String getOutFile();
-
-  void setOutFile(String outFile);
+    // Look for lines matching 'regex' in the files under 'rootPath' and write those lines to 'outfile'
+    try {
+      imp.process();
+    } catch (IOException e) {
+      imp.logger.error(e.getMessage(), e);
+    }
+  }
 }
