@@ -3,7 +3,6 @@ package ca.jrvs.apps.grep;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -78,11 +77,12 @@ public class JavaGrepImp implements JavaGrepInt {
   @Override
   public List<File> listFiles(String rootDir) {
     File f = new File(rootDir);
-    List<File> files = Arrays.asList(f.listFiles());
-    if (files != null) {
-      return files;
+    // If rootDir is not a dir then it has no files under it
+    if (!f.isDirectory()) {
+      return new ArrayList<>();
     }
-    return new ArrayList<>();
+    List<File> files = Arrays.asList(f.listFiles());
+    return files;
   }
 
   // Read 'inputFile' and return all its lines in a list
@@ -94,6 +94,8 @@ public class JavaGrepImp implements JavaGrepInt {
 
     List<String> lines = new ArrayList<>();
 
+    // Can't propagate IOException bc this method only
+    // throws IllegalArgumentException; therefore handle here
     try {
       BufferedReader br = new BufferedReader(new FileReader(inputFile));
       String s = br.readLine();
@@ -102,8 +104,6 @@ public class JavaGrepImp implements JavaGrepInt {
         s = br.readLine();
       }
       br.close();
-    } catch (FileNotFoundException e) {
-      logger.error(e.getMessage(), e);
     } catch (IOException e) {
       logger.error(e.getMessage(), e);
     }
@@ -122,17 +122,13 @@ public class JavaGrepImp implements JavaGrepInt {
   @Override
   public void writeToFile(List<String> lines) throws IOException {
     File out = new File(this.outFile);
-    try {
-      BufferedWriter bw = new BufferedWriter(new FileWriter(out));
-      for (String s : lines) {
-        bw.write(s);
-        bw.newLine();
-      }
-      bw.close();
-    } catch (IOException e) {
-      logger.error(e.getMessage(), e);
-      throw new IOException("ERROR: error writing to output file");
+    // Propagate IOException (new BufferedWriter and new FileWriter also throw the same exception)
+    BufferedWriter bw = new BufferedWriter(new FileWriter(out));
+    for (String s : lines) {
+      bw.write(s);
+      bw.newLine();
     }
+    bw.close();
   }
 
   /*
@@ -170,5 +166,13 @@ public class JavaGrepImp implements JavaGrepInt {
   public void setOutFile(String outFile) {
     String fileName = outFile.substring(2);
     this.outFile = "/home/centos/dev/jarvis_data_eng_Andres/core_java/grep/out/" + fileName;
+  }
+
+  public List<String> getMatchedLines() {
+    return this.matchedLines;
+  }
+
+  public Logger getLogger() {
+    return this.logger;
   }
 }

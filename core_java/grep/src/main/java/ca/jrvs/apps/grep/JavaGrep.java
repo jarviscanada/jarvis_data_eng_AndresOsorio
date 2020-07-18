@@ -14,18 +14,22 @@ public class JavaGrep {
     BasicConfigurator.configure();
 
     // JavaGrepImp object to work with
-    JavaGrepImp imp = new JavaGrepImp();
+//    JavaGrepInt imp = new JavaGrepImp();
+
+    // JavaGrepLambdaImp object to work with
+    JavaGrepInt impLambda = new JavaGrepLambdaImp();
 
     // Set the object's fields according to the args given by user
-    imp.setRegex(args[0]);
-    imp.setRootPath(args[1]);
-    imp.setOutFile(args[2]);
+    impLambda.setRegex(args[0]);
+    impLambda.setRootPath(args[1]);
+    impLambda.setOutFile(args[2]);
 
     // Look for lines matching 'regex' in the files under 'rootPath' and write those lines to 'outfile'
+    // Handle IOException that has been propagated until here
     try {
-      imp.process();
+      impLambda.process();
     } catch (IOException e) {
-      imp.logger.error(e.getMessage(), e);
+      impLambda.getLogger().error(e.getMessage(), e);
     }
   }
 }

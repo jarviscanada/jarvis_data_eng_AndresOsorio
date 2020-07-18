@@ -3,6 +3,7 @@ package ca.jrvs.apps.grep;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import org.slf4j.Logger;
 
 public interface JavaGrepInt {
 
@@ -59,4 +60,8 @@ public interface JavaGrepInt {
   String getOutFile();
 
   void setOutFile(String outFile);
+
+  List<String> getMatchedLines();
+
+  Logger getLogger();
 }
