@@ -34,9 +34,9 @@ public class JavaGrepImp implements JavaGrepInt {
 
   // Setter; only for testing purposes
   public void setFields(String regex, String rootPath, String outFile) {
-    this.regex = regex;
-    this.rootPath = rootPath;
-    this.outFile = outFile;
+    setRegex(regex);
+    setRootPath(rootPath);
+    setOutFile(outFile);
   }
 
   // Traverse files under 'root' dir recursively;
@@ -168,10 +168,17 @@ public class JavaGrepImp implements JavaGrepInt {
     this.outFile = "/home/centos/dev/jarvis_data_eng_Andres/core_java/grep/out/" + fileName;
   }
 
+  @Override
   public List<String> getMatchedLines() {
     return this.matchedLines;
   }
 
+  @Override
+  public void setMatchedLines(List<String> lines) {
+    this.matchedLines = lines;
+  }
+
+  @Override
   public Logger getLogger() {
     return this.logger;
   }

@@ -63,5 +63,9 @@ public interface JavaGrepInt {
 
   List<String> getMatchedLines();
 
+  void setMatchedLines(List<String> lines);
+
+  void setFields(String regex, String rootPath, String outFile);
+
   Logger getLogger();
 }

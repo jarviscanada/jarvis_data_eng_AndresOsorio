@@ -11,32 +11,27 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
+/**
+ * Functional implementation of the JavaGrep app; same functionality
+ * but implemented using Java's Stream and Lambda APIs
+ */
 public class JavaGrepLambdaImp extends JavaGrepImp {
 
-//  public Stream<File> rootFilesStream() {
-//    return listFiles(getRootPath()).stream();
-//  }
-//
-//  public void fileAction(Stream<File> s) {
-//    s.forEach(f -> readLines(f)
-//        .stream()
-//        .filter(l -> containsPattern(l))
-//        .forEach(l -> getMatchedLines()
-//            .add(l))
-//    );
-//  }
-//
-//  @Override
-//  public void process() throws IOException {
-//    listFiles(getRootPath())
-//        .stream()
-//        .filter(file -> file.isFile())
-//        .forEach(file -> readLines(file)
-//            .stream()
-//            .filter(line -> containsPattern(line))
-//            .forEach(line -> getMatchedLines().add(line))
-//        );
-//  }
+  @Override
+  public void process() throws IOException {
+    // Get the list of files as a stream
+    Stream<File> files = listFiles(getRootPath()).stream();
+    // If a file is a directory then it will contain its own list of files;
+    // therefore we need to flatten the stream 'files' to get the actual regular files nested within all dirs in the list
+    Stream<File> flattenedFiles = files.flatMap(dir -> listFiles(dir.getAbsolutePath()).stream());
+    // We also need to access all the lines from all the 'flattenedFiles';
+    // therefore also flatten the stream 'flattenedFiles' to get all the lines from each file
+    Stream<String> flattenedLines = flattenedFiles.flatMap(file -> readLines(file).stream());
+    // Go through all the lines in all the files and only add those that match 'regex' to 'matchedLines'
+    flattenedLines.filter(line -> containsPattern(line)).forEach(matchedLine -> getMatchedLines().add(matchedLine));
+    // Write all the matche lines to the 'outputFile'
+    writeToFile(getMatchedLines());
+  }
 
   @Override
   public List<File> listFiles(String rootDir) {
