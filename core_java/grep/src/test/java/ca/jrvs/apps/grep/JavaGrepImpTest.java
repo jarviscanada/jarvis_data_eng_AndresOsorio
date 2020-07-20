@@ -37,7 +37,7 @@ public class JavaGrepImpTest {
   static JavaGrepImp imp = new JavaGrepImp();
 
   @BeforeClass
-  public static void setUp() throws IOException {
+  public static void setUp() {
     files = new ArrayList<>();
     lines = new ArrayList<>();
 
@@ -61,12 +61,16 @@ public class JavaGrepImpTest {
     // setup for writeToFile()
     lines2 = Arrays.asList("line1", "line2", "line4");
     outTest = new File(rootPath + "out/test.out");
-    bw = new BufferedWriter(new FileWriter(outTest));
-    for (String l : lines2) {
-      bw.write(l);
-      bw.newLine();
+    try {
+      bw = new BufferedWriter(new FileWriter(outTest));
+      for (String l : lines2) {
+        bw.write(l);
+        bw.newLine();
+      }
+      bw.close();
+    } catch (IOException e) {
+      imp.getLogger().error(e.getMessage(), e);
     }
-    bw.close();
 
     // setup for process()
     outTest2 = new File(rootPath + "out/grepTest.out");
@@ -103,7 +107,7 @@ public class JavaGrepImpTest {
   }
 
   @Test
-  public void writeToFile() throws IOException {
+  public void writeToFile() {
     assertTrue("writeToFile test", imp.readLines(outTest).equals(lines2));
   }
 

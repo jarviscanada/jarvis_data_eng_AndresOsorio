@@ -24,7 +24,7 @@ public class JavaGrepLambdaImpTest extends JavaGrepImpTest {
   }
 
   @Override
-  public void writeToFile() throws IOException {
+  public void writeToFile() {
     assertTrue("writeToFile test", impLambda.readLines(outTest).equals(lines2));
   }
 
