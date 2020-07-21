@@ -1,6 +1,8 @@
 package ca.jrvs.apps.practice;
 
+import java.io.File;
 import java.lang.reflect.Array;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -66,6 +68,9 @@ class Main {
     streamOfListsOfInts.forEach(list -> System.out.print(list));
     System.out.println();
     // Prints as a single stream of ints
+    is2.forEach(i -> System.out.println(i));
+    System.out.println();
+    is2 = ints2.stream().filter(i -> (i % 2 == 0));
     is2.forEach(i -> System.out.println(i));
   }
 }

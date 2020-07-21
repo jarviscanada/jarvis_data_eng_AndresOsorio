@@ -20,7 +20,7 @@ public class JavaGrepImpTest {
 
   static List<File> files;
   static List<String> lines, lines2;
-  static File file, outTest, outTest2, outTest3;
+  static File file, grepOut, testOut;
   static Pattern p;
   static Matcher m;
   static BufferedReader br;
@@ -59,10 +59,10 @@ public class JavaGrepImpTest {
     }
 
     // setup for writeToFile()
-    lines2 = Arrays.asList("line1", "line2", "line4");
-    outTest = new File(rootPath + "out/test.out");
+    lines2 = Arrays.asList("line1", "line2", "line5");
+    testOut = new File(rootPath + "out/test.out");
     try {
-      bw = new BufferedWriter(new FileWriter(outTest));
+      bw = new BufferedWriter(new FileWriter(testOut));
       for (String l : lines2) {
         bw.write(l);
         bw.newLine();
@@ -73,19 +73,18 @@ public class JavaGrepImpTest {
     }
 
     // setup for process()
-    outTest2 = new File(rootPath + "out/grepTest.out");
-    outTest3 = new File(rootPath + "out/grep.out");
+    grepOut = new File(rootPath + "out/grep.out");
   }
 
   @Test
   public void gettersSetters() {
-    String[] args = {"matchall", "./data", "./someting"};
+    String[] args = {"matchall", "./data", "./out/grep.out"};
     String two = args[1].substring(2);
     String three = args[2].substring(2);
     imp.setFields(args[0], args[1], args[2]);
     assertTrue("getters and setters test", (imp.getRegex().equals(args[0]) &&
                                           imp.getRootPath().equals(rootPath + two) &&
-                                          imp.getOutFile().equals(rootPath + "out/" + three)));
+                                          imp.getOutFile().equals(rootPath + three)));
   }
 
   @Test
@@ -108,16 +107,23 @@ public class JavaGrepImpTest {
 
   @Test
   public void writeToFile() {
-    assertTrue("writeToFile test", imp.readLines(outTest).equals(lines2));
+    imp.setOutFile("./out/grep.out");
+    try {
+      imp.writeToFile(lines2);
+    } catch (IOException e) {
+      imp.getLogger().error(e.getMessage(), e);
+    }
+
+    assertTrue("writeToFile test", imp.readLines(grepOut).equals(lines2));
   }
 
   @Test
   public void process() {
-    imp.setFields("\\bsample\\b", "./data", "./grep.out");
+    imp.setFields("\\bsample\\b", "./data", "./out/grep.out");
     imp.walk(rootPath + "data/");
 
     try {
-      bw = new BufferedWriter(new FileWriter(outTest2));
+      bw = new BufferedWriter(new FileWriter(testOut));
       for (String l : imp.getMatchedLines()) {
         bw.write(l);
         bw.newLine();
@@ -129,6 +135,6 @@ public class JavaGrepImpTest {
       imp.getLogger().error(e.getMessage(), e);
     }
 
-    assertTrue("process test", imp.readLines(outTest2).equals(imp.readLines(outTest3)));
+    assertTrue("process test", imp.readLines(testOut).equals(imp.readLines(grepOut)));
   }
 }

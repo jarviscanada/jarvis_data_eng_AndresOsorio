@@ -11,18 +11,20 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class JavaGrepImp implements JavaGrepInt {
 
   // Logger object for reporting errors/debugging
-  final Logger logger = LoggerFactory.getLogger(JavaGrepInt.class);
+  private final Logger logger = LoggerFactory.getLogger(JavaGrepInt.class);
 
   /*
       regex, rootPath and outFile are given as args by user;
       matchedLines acts as a placeholder for lines to be written to outFile
    */
+  private final String projectPath = System.getProperty("user.dir");
   // Regular expression to match lines in file(s) against
   private String regex;
   // Absolute path of directory to traverse recursively
@@ -85,6 +87,11 @@ public class JavaGrepImp implements JavaGrepInt {
     return files;
   }
 
+  @Override
+  public Stream<File> listFiles2(String rootDir) {
+    return null;
+  }
+
   // Read 'inputFile' and return all its lines in a list
   @Override
   public List<String> readLines(File inputFile) throws IllegalArgumentException {
@@ -110,6 +117,11 @@ public class JavaGrepImp implements JavaGrepInt {
     return lines;
   }
 
+  @Override
+  public Stream<String> readLines2(File inputFile) throws IllegalArgumentException {
+    return null;
+  }
+
   // Check if 'line' matches 'this.regex'
   @Override
   public boolean containsPattern(String line) {
@@ -131,11 +143,11 @@ public class JavaGrepImp implements JavaGrepInt {
     bw.close();
   }
 
-  /*
-   * Setters and getters
-   * It is assumed that the 'rootPath' provided by user is under /home/centos/dev/jarvis_data_eng_Andres/core_java/grep/
-   * It is assumed that the 'outFile' provided by user is under /home/centos/dev/jarvis_data_eng_Andres/core_java/grep/out/
-   */
+  @Override
+  public void writeToFile2(Stream<String> lines) throws IOException {
+  }
+
+  // Setters and getters
   @Override
   public String getRootPath() {
     return this.rootPath;
@@ -143,8 +155,8 @@ public class JavaGrepImp implements JavaGrepInt {
 
   @Override
   public void setRootPath(String rootPath) {
-    String dirName = rootPath.substring(2);
-    this.rootPath = "/home/centos/dev/jarvis_data_eng_Andres/core_java/grep/" + dirName;
+    String dirName = rootPath.substring(1);
+    this.rootPath = this.projectPath + dirName;
   }
 
   @Override
@@ -164,13 +176,18 @@ public class JavaGrepImp implements JavaGrepInt {
 
   @Override
   public void setOutFile(String outFile) {
-    String fileName = outFile.substring(2);
-    this.outFile = "/home/centos/dev/jarvis_data_eng_Andres/core_java/grep/out/" + fileName;
+    String fileName = outFile.substring(1);
+    this.outFile = this.projectPath + fileName;
   }
 
   @Override
   public List<String> getMatchedLines() {
     return this.matchedLines;
+  }
+
+  @Override
+  public Stream<String> getMatchedLines2() {
+    return null;
   }
 
   @Override

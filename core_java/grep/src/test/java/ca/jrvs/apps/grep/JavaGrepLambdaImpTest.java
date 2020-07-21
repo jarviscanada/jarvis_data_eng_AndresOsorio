@@ -6,7 +6,9 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.security.cert.CollectionCertStoreParameters;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class JavaGrepLambdaImpTest extends JavaGrepImpTest {
@@ -15,41 +17,56 @@ public class JavaGrepLambdaImpTest extends JavaGrepImpTest {
 
   @Override
   public void listFiles() {
-    assertTrue("listFiles test", impLambda.listFiles(rootPath + "data/").equals(files));
+    assertTrue("listFiles test",
+        impLambda.listFiles2(rootPath + "data/").collect(Collectors.toList()).equals(files));
   }
 
   @Override
   public void readLines() {
-    assertTrue("readLines test", impLambda.readLines(file).equals(lines));
+    assertTrue("readLines test",
+        impLambda.readLines2(file).collect(Collectors.toList()).equals(lines));
   }
 
   @Override
   public void writeToFile() {
-    assertTrue("writeToFile test", impLambda.readLines(outTest).equals(lines2));
+    impLambda.setOutFile("./out/grep.out");
+    try {
+      impLambda.writeToFile2(lines2.stream());
+      impLambda.getBW().close();
+    } catch (IOException e) {
+      impLambda.getLogger().error(e.getMessage(), e);
+    }
+
+    assertTrue("writeToFile test",
+        impLambda.readLines2(grepOut).collect(Collectors.toList()).equals(lines2));
   }
 
   @Override
   public void process() {
-    impLambda.setFields("\\bsample\\b", "./data", "./grep.out");
-    Stream<File> files = impLambda.listFiles(impLambda.getRootPath()).stream();
-    Stream<File> flattenedFiles = files.flatMap(dir -> impLambda.listFiles(dir.getAbsolutePath()).stream());
-    Stream<String> flattenedLines = flattenedFiles.flatMap(file -> impLambda.readLines(file).stream());
-    flattenedLines.filter(line -> impLambda.containsPattern(line)).forEach(matchedLine -> impLambda.getMatchedLines().add(matchedLine));
+    impLambda.setFields("\\bsample\\b", "./data", "./out/grep.out");
+    Stream<File> files = impLambda.listFiles2(impLambda.getRootPath());
+    Stream<File> flattenedFiles = files.flatMap(dir -> impLambda.listFiles2(dir.getAbsolutePath()));
+    Stream<String> flattenedLines = flattenedFiles.flatMap(file -> impLambda.readLines2(file));
+    Stream<String> matchedLines = flattenedLines.filter(line -> impLambda.containsPattern(line));
 
     try {
-      impLambda.writeToFile(impLambda.getMatchedLines());
-      bw = new BufferedWriter(new FileWriter(outTest2));
-      for (String l : impLambda.getMatchedLines()) {
-        bw.write(l);
-        bw.newLine();
-      }
+      bw = new BufferedWriter(new FileWriter(testOut));
+      matchedLines.forEach(l -> {
+        try {
+          bw.write(l);
+          bw.newLine();
+        } catch (IOException e) {
+          impLambda.getLogger().error(e.getMessage(), e);
+        }
+      });
       bw.close();
-      impLambda.setMatchedLines(new ArrayList<>());
       impLambda.process();
     } catch (IOException e) {
       impLambda.getLogger().error(e.getMessage(), e);
     }
 
-    assertTrue("process test", impLambda.readLines(outTest2).equals(impLambda.readLines(outTest3)));
+    assertTrue("process test",
+        impLambda.readLines2(testOut).collect(Collectors.toList())
+            .equals(impLambda.readLines2(grepOut).collect(Collectors.toList())));
   }
 }
