@@ -18,7 +18,7 @@ public class JavaGrepLambdaImpTest extends JavaGrepImpTest {
   @Override
   public void listFiles() {
     assertTrue("listFiles test",
-        impLambda.listFiles2(rootPath + "data/").collect(Collectors.toList()).equals(files));
+        impLambda.listFiles2(rootPath + "/data/").collect(Collectors.toList()).equals(files));
   }
 
   @Override

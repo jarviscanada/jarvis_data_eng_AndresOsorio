@@ -16,7 +16,7 @@ import static org.junit.Assert.*;
 
 public class JavaGrepImpTest {
 
-  static final String rootPath = "/home/centos/dev/jarvis_data_eng_Andres/core_java/grep/";
+  static final String rootPath = System.getProperty("user.dir");
 
   static List<File> files;
   static List<String> lines, lines2;
@@ -41,8 +41,8 @@ public class JavaGrepImpTest {
     files = new ArrayList<>();
     lines = new ArrayList<>();
 
-    files.add(new File(rootPath + "data/txt/"));
-    files.add(new File(rootPath + "data/example/"));
+    files.add(new File(rootPath + "/data/txt/"));
+    files.add(new File(rootPath + "/data/example/"));
 
     // setup for readLines()
     file = files.get(1).listFiles()[0];
@@ -60,7 +60,7 @@ public class JavaGrepImpTest {
 
     // setup for writeToFile()
     lines2 = Arrays.asList("line1", "line2", "line5");
-    testOut = new File(rootPath + "out/test.out");
+    testOut = new File(rootPath + "/out/test.out");
     try {
       bw = new BufferedWriter(new FileWriter(testOut));
       for (String l : lines2) {
@@ -73,14 +73,14 @@ public class JavaGrepImpTest {
     }
 
     // setup for process()
-    grepOut = new File(rootPath + "out/grep.out");
+    grepOut = new File(rootPath + "/out/grep.out");
   }
 
   @Test
   public void gettersSetters() {
     String[] args = {"matchall", "./data", "./out/grep.out"};
-    String two = args[1].substring(2);
-    String three = args[2].substring(2);
+    String two = args[1].substring(1);
+    String three = args[2].substring(1);
     imp.setFields(args[0], args[1], args[2]);
     assertTrue("getters and setters test", (imp.getRegex().equals(args[0]) &&
                                           imp.getRootPath().equals(rootPath + two) &&
@@ -89,7 +89,7 @@ public class JavaGrepImpTest {
 
   @Test
   public void listFiles() {
-    assertTrue("listFiles test", imp.listFiles(rootPath + "data/").equals(files));
+    assertTrue("listFiles test", imp.listFiles(rootPath + "/data/").equals(files));
   }
 
   @Test
@@ -120,7 +120,7 @@ public class JavaGrepImpTest {
   @Test
   public void process() {
     imp.setFields("\\bsample\\b", "./data", "./out/grep.out");
-    imp.walk(rootPath + "data/");
+    imp.walk(rootPath + "/data/");
 
     try {
       bw = new BufferedWriter(new FileWriter(testOut));
