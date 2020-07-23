@@ -8,8 +8,8 @@ given directory and writing the evaluated text to the given file:
 1. Using data structures (Lists) 
 2. Using Java 8 Streams API
 
-Method (1) loads all the text (input and output) into Lists.  
-Method (2) pipes all the text (input and output) through streams.  
+Implementation (1) loads all the text (input and output) into Lists.  
+Implementation (2) pipes all the text (input and output) through streams.  
 Both implementations used I/O buffers for the actual reading and writing.
 
 ## Usage
@@ -45,7 +45,7 @@ docker run --rm -v `pwd`/data:/data -v `pwd`/log:/log onehoax/grep .*Romeo.*Juli
 ```
 
 ## Pseudocode
-**For Method (1):**
+**For Implementation (1):**
 ```bash
 matchedLines = []
 for file in listFilesRecursively(rootDir)
@@ -54,7 +54,7 @@ for file in listFilesRecursively(rootDir)
         matchedLines.add(line)
 writeToFile(matchedLines)
 ```
-**For Method (2):**
+**For Implementation (2):**
 ```bash
 files = listFilesRecursively(rootDir)
 flattenedFiles = files.flatMap
@@ -66,16 +66,15 @@ writeToFile(matchedLines)
 ## Performance Issue
 We often want to process big datasets with a limited JVM max. heap size
 (~1.5GB for a 32-bit JVM); if, for example, we want to process a file 
-that is bigger than our JVM max. heap size, the app will crash using method
-(1) because it would need to load all the data from the file into data structures
+that is bigger than our JVM max. heap size, the app will crash using implementation (1) because it would need to load all the data from the file into data structures
 residing in its heap memory. 
-The same scenario is possible with method (2) because Java 8 Streams are not 
+The same scenario is possible with implementation (2) because Java 8 Streams are not 
 data structures, they are simply pipelines that stream data; only the data item
 being currently operated on is held in memory.  
 Performance is further improved by using I/O buffers for reading and writing
 from/to files, which perform those operations in chunks rather than all at once.  
 
-**Note:** Even though method (1) also uses buffers for reading and writing, it
+**Note:** Even though implementation (1) also uses buffers for reading and writing, it
 still has to load all the data into data structures.
 
 ## Improvement

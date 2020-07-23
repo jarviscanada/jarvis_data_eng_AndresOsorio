@@ -27,35 +27,28 @@ public class JavaGrepLambdaImp extends JavaGrepImp {
   }
 
 
+  /**
+   * Each file contains its own list of files in 'files'; flatten this lists of files
+   * same applies for the lines read from different diff sources.
+   *
+   * Closing a buffer also closes the streams related to it; therefore close at the end
+   *
+   * @throws IOException
+   */
   @Override
   public void process() throws IOException {
-    // Get the list of files as a stream
-    Stream<File> files = listFiles2(getRootPath());
-    // If a file is a directory then it will contain its own list of files;
-    // therefore we need to flatten the stream 'files' to get the actual regular files nested within all dirs in the list
-    Stream<File> flattenedFiles = files.flatMap(dir -> listFiles2(dir.getAbsolutePath()));
-    // We also need to access all the lines from all the 'flattenedFiles';
-    // therefore also flatten the stream 'flattenedFiles' to get all the lines from each file
-    Stream<String> flattenedLines = flattenedFiles.flatMap(file -> readLines2(file));
-    // Go through all the lines in all the files and only add those that match 'regex' to 'matchedLines'
-    Stream<String> matchedLines2 = flattenedLines.filter(line -> containsPattern(line));
-    // Write all the matched lines to the 'outputFile'
-    writeToFile2(matchedLines2);
-    // The stream returned by 'readLines2' is the stream returned by the BufferedReader 'br';
-    // when you close a BufferedReader, all its underlying streams and writers (FileWriter, any Stream returned by that BufferedReader)
-    // are closed as well; therefore if we close 'br' within the 'readLines2' method, we also close the Stream<String> it returns;
-    // since streams are just pipelines and not actual datastructures, we can only pass them around as references
-    // (not possible to create a deep copy of a stream); therefore if we close 'br' in 'readLines2', we also close the stream it returns
-    // and any subsequent operations on that returned reference to the stream will fail.
-    // Any BufferedReader and/or BufferedWriter should be closed after the streams manipulated by them are no longer needed.
+    Stream<File> files = listFilesStream(getRootPath());
+    Stream<File> flattenedFiles = files.flatMap(dir -> listFilesStream(dir.getAbsolutePath()));
+    Stream<String> flattenedLines = flattenedFiles.flatMap(file -> readLinesStream(file));
+    Stream<String> matchedLines = flattenedLines.filter(line -> containsPattern(line));
+    writeToFileStream(matchedLines);
     br.close();
     bw.close();
   }
 
   @Override
-  public Stream<File> listFiles2(String rootDir) {
+  public Stream<File> listFilesStream(String rootDir) {
     File f = new File(rootDir);
-    // If rootDir is not a dir then it has no files under it
     if (!f.isDirectory()) {
       return Stream.empty();
     }
@@ -63,7 +56,7 @@ public class JavaGrepLambdaImp extends JavaGrepImp {
   }
 
   @Override
-  public Stream<String> readLines2(File inputFile) throws IllegalArgumentException {
+  public Stream<String> readLinesStream(File inputFile) throws IllegalArgumentException {
     if (!inputFile.isFile()) {
       throw new IllegalArgumentException("ERROR: argument must be file");
     }
@@ -72,23 +65,24 @@ public class JavaGrepLambdaImp extends JavaGrepImp {
 
     try {
       br = new BufferedReader(new FileReader(inputFile));
-      // returns a Stream<String> containing the lines in the buffer;
-      // use this stream to populate 'readLines'
       linesRead = br.lines();
-      // See 'process()' for closing instructions
     } catch (IOException e) {
       getLogger().error(e.getMessage(), e);
     }
     return linesRead;
   }
 
+  /**
+   * Exceptions that are thrown by lambda tasks have to be handled inside
+   *
+   * @param lines
+   * @throws IOException
+   */
   @Override
-  public void writeToFile2(Stream<String> lines) throws IOException {
+  public void writeToFileStream(Stream<String> lines) throws IOException {
     File out = new File(getOutFile());
-    // Propagate IOException from BufferedWriter and FileWriter
     bw = new BufferedWriter(new FileWriter(out));
     lines.forEach(line -> {
-      // Exceptions that are thrown by lambda tasks have to be handled inside
       try {
         bw.write(line);
         bw.newLine();
@@ -96,6 +90,5 @@ public class JavaGrepLambdaImp extends JavaGrepImp {
         getLogger().error(e.getMessage(), e);
       }
     });
-    // See 'process()' for closing instructions
   }
 }

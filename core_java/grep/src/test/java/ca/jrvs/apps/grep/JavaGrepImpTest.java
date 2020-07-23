@@ -14,25 +14,25 @@ import java.util.regex.Pattern;
 import org.junit.*;
 import static org.junit.Assert.*;
 
+/**
+ * Order of execution:
+ * @BeforeClass
+ * Constructor of class under test
+ * @Before
+ * @Test
+ *
+ */
 public class JavaGrepImpTest {
 
   static final String rootPath = System.getProperty("user.dir");
 
   static List<File> files;
-  static List<String> lines, lines2;
+  static List<String> lines, otherLines;
   static File file, grepOut, testOut;
-  static Pattern p;
-  static Matcher m;
+  static Pattern pattern;
+  static Matcher matcher;
   static BufferedReader br;
   static BufferedWriter bw;
-
-  /*
-      Order of execution:
-        @BeforeClass
-        Constructor of class under test
-        @Before
-        @Test
-   */
 
   static JavaGrepImp imp = new JavaGrepImp();
 
@@ -59,11 +59,11 @@ public class JavaGrepImpTest {
     }
 
     // setup for writeToFile()
-    lines2 = Arrays.asList("line1", "line2", "line5");
+    otherLines = Arrays.asList("line1", "line2", "line5");
     testOut = new File(rootPath + "/out/test.out");
     try {
       bw = new BufferedWriter(new FileWriter(testOut));
-      for (String l : lines2) {
+      for (String l : otherLines) {
         bw.write(l);
         bw.newLine();
       }
@@ -100,21 +100,21 @@ public class JavaGrepImpTest {
   @Test
   public void containsPattern() {
     String l = "This line contains words\n";
-    p = Pattern.compile("\\w");
-    m = p.matcher(l);
-    assertTrue("containsPattern test", m.find());
+    pattern = Pattern.compile("\\w");
+    matcher = pattern.matcher(l);
+    assertTrue("containsPattern test", matcher.find());
   }
 
   @Test
   public void writeToFile() {
     imp.setOutFile("./out/grep.out");
     try {
-      imp.writeToFile(lines2);
+      imp.writeToFile(otherLines);
     } catch (IOException e) {
       imp.getLogger().error(e.getMessage(), e);
     }
 
-    assertTrue("writeToFile test", imp.readLines(grepOut).equals(lines2));
+    assertTrue("writeToFile test", imp.readLines(grepOut).equals(otherLines));
   }
 
   @Test

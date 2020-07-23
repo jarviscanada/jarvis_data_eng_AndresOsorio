@@ -8,6 +8,7 @@ target/
 *.iml
 .idea/
 .eclipse
+dependency-reduced-pom.xml
 
 # extra files
 helper*

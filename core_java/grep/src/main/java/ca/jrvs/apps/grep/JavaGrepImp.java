@@ -17,34 +17,35 @@ import org.slf4j.LoggerFactory;
 
 public class JavaGrepImp implements JavaGrepInt {
 
-  // Logger object for reporting errors/debugging
   private final Logger logger = LoggerFactory.getLogger(JavaGrepInt.class);
-
-  /*
-      regex, rootPath and outFile are given as args by user;
-      matchedLines acts as a placeholder for lines to be written to outFile
-   */
   private final String projectPath = System.getProperty("user.dir");
-  // Regular expression to match lines in file(s) against
+
   private String regex;
-  // Absolute path of directory to traverse recursively
   private String rootPath;
-  // File to write matched lines to
   private String outFile;
-  // List containing the lines from files matching 'regex'
   private List<String> matchedLines = new ArrayList<>();
 
-  // Setter; only for testing purposes
+  /**
+   * Setter for testing purposes
+   *
+   * @param regex
+   * @param rootPath
+   * @param outFile
+   */
   public void setFields(String regex, String rootPath, String outFile) {
     setRegex(regex);
     setRootPath(rootPath);
     setOutFile(outFile);
   }
 
-  // Traverse files under 'root' dir recursively;
-  // if item is a dir then call walk recursively;
-  // if item is a file then read it and store any
-  // lines matching 'regex' in 'matchedLines'
+  /**
+   * Traverse files under 'root' dir recursively;
+   * if item is a dir then call walk recursively;
+   * if item is a file then read it and store any
+   * lines matching 'regex' in 'matchedLines'
+   *
+   * @param root
+   */
   public void walk(String root) {
     List<File> files = listFiles(root);
     for (File f : files) {
@@ -61,25 +62,23 @@ public class JavaGrepImp implements JavaGrepInt {
     }
   }
 
-  // Look for lines matching 'regex' in the files under 'rootPath' and write those lines to 'outfile'
   @Override
   public void process() throws IOException {
-    // Traverse 'rootPath' recursively
     walk(this.rootPath);
 
-    // Write lines matching 'regex' to 'outFile'
     writeToFile(matchedLines);
   }
 
-  /*
-      File f points to the directory rootDir;
-      f.listFiles() returns an array containing all Files (both dirs and files)
-      under rootDir (each entry in the array that is a dir points to its own files)
+  /**
+   * f.listFiles() returns an array containing all Files (both dirs and files)
+   * under rootDir (each entry in the array that is a dir points to its own files)
+   *
+   * @param rootDir input directory
+   * @return
    */
   @Override
   public List<File> listFiles(String rootDir) {
     File f = new File(rootDir);
-    // If rootDir is not a dir then it has no files under it
     if (!f.isDirectory()) {
       return new ArrayList<>();
     }
@@ -88,11 +87,10 @@ public class JavaGrepImp implements JavaGrepInt {
   }
 
   @Override
-  public Stream<File> listFiles2(String rootDir) {
+  public Stream<File> listFilesStream(String rootDir) {
     return null;
   }
 
-  // Read 'inputFile' and return all its lines in a list
   @Override
   public List<String> readLines(File inputFile) throws IllegalArgumentException {
     if (!inputFile.isFile()) {
@@ -101,8 +99,6 @@ public class JavaGrepImp implements JavaGrepInt {
 
     List<String> lines = new ArrayList<>();
 
-    // Can't propagate IOException bc this method only
-    // throws IllegalArgumentException; therefore handle here
     try {
       BufferedReader br = new BufferedReader(new FileReader(inputFile));
       String s = br.readLine();
@@ -118,23 +114,20 @@ public class JavaGrepImp implements JavaGrepInt {
   }
 
   @Override
-  public Stream<String> readLines2(File inputFile) throws IllegalArgumentException {
+  public Stream<String> readLinesStream(File inputFile) throws IllegalArgumentException {
     return null;
   }
 
-  // Check if 'line' matches 'this.regex'
   @Override
   public boolean containsPattern(String line) {
-    Pattern p = Pattern.compile(this.regex);
-    Matcher m = p.matcher(line);
-    return m.find();
+    Pattern pattern = Pattern.compile(this.regex);
+    Matcher matcher = pattern.matcher(line);
+    return matcher.find();
   }
 
-  // Write 'lines' to 'this.outFile'
   @Override
   public void writeToFile(List<String> lines) throws IOException {
     File out = new File(this.outFile);
-    // Propagate IOException (new BufferedWriter and new FileWriter also throw the same exception)
     BufferedWriter bw = new BufferedWriter(new FileWriter(out));
     for (String s : lines) {
       bw.write(s);
@@ -144,10 +137,9 @@ public class JavaGrepImp implements JavaGrepInt {
   }
 
   @Override
-  public void writeToFile2(Stream<String> lines) throws IOException {
+  public void writeToFileStream(Stream<String> lines) throws IOException {
   }
 
-  // Setters and getters
   @Override
   public String getRootPath() {
     return this.rootPath;
@@ -183,11 +175,6 @@ public class JavaGrepImp implements JavaGrepInt {
   @Override
   public List<String> getMatchedLines() {
     return this.matchedLines;
-  }
-
-  @Override
-  public Stream<String> getMatchedLines2() {
-    return null;
   }
 
   @Override

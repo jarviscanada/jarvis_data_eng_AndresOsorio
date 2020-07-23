@@ -29,7 +29,7 @@ public interface JavaGrepInt {
    * @param rootDir
    * @return Stream<File>
    */
-  Stream<File> listFiles2(String rootDir);
+  Stream<File> listFilesStream(String rootDir);
 
   /**
    * Read a file and return all the lines
@@ -58,7 +58,7 @@ public interface JavaGrepInt {
    * @return Stream<String>
    * @throws IllegalArgumentException
    */
-  Stream<String> readLines2(File inputFile) throws IllegalArgumentException;
+  Stream<String> readLinesStream(File inputFile) throws IllegalArgumentException;
 
   /**
    * Check if a line contains the regex pattern (passed by user)
@@ -83,7 +83,7 @@ public interface JavaGrepInt {
    * @param lines
    * @throws IOException
    */
-  void writeToFile2(Stream<String> lines) throws IOException;
+  void writeToFileStream(Stream<String> lines) throws IOException;
 
   String getRootPath();
 
@@ -98,8 +98,6 @@ public interface JavaGrepInt {
   void setOutFile(String outFile);
 
   List<String> getMatchedLines();
-
-  Stream<String> getMatchedLines2();
 
   void setMatchedLines(List<String> lines);
 
