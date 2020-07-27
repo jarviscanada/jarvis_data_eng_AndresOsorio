@@ -28,6 +28,12 @@ public class LinkedJListTest {
   }
 
   @Test
+  public void addFirst() {
+    myList.addFirst("Gero");
+    assertTrue(myList.get(0).equals("Gero") && myList.size() == 4);
+  }
+
+  @Test
   public void toArray() {
     assertArrayEquals(myList.toArray(), otherList.toArray());
   }
@@ -61,6 +67,20 @@ public class LinkedJListTest {
   public void remove() {
     assertTrue(myList.remove(1).equals("Valen"));
     assertTrue(!myList.contains("Valen"));
+    assertTrue(myList.size() == 2);
+  }
+
+  @Test
+  public void removeFirst() {
+    myList.removeFirst();
+    assertTrue(myList.get(0).equals("Valen"));
+    assertTrue(myList.size() == 2);
+  }
+
+  @Test
+  public void removeLast() {
+    myList.removeLast();
+    assertTrue(myList.get(myList.size() - 1).equals("Valen"));
     assertTrue(myList.size() == 2);
   }
 

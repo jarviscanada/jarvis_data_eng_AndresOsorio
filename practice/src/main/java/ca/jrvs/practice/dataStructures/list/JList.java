@@ -14,6 +14,14 @@ import java.util.Collection;
 public interface JList<E> {
 
   /**
+   * Calls addLast(E e)
+   *
+   * @param e
+   * @return
+   */
+  boolean add(E e);
+
+  /**
    * Appends the specified element to the end of this list (optional
    * operation).
    *
@@ -22,7 +30,16 @@ public interface JList<E> {
    * @throws NullPointerException if the specified element is null and this
    *         list does not permit null elements
    */
-  boolean add(E e);
+  boolean addLast(E e);
+
+
+  /**
+   * Appends the specified element to the beginning og the list
+   *
+   * @param e
+   * @return
+   */
+  boolean addFirst(E e);
 
   /**
    * Returns an array containing all of the elements in this list in proper
@@ -92,6 +109,20 @@ public interface JList<E> {
    * @throws IndexOutOfBoundsException {@inheritDoc}
    */
   E remove(int index);
+
+  /**
+   * Removes and returns the element at the head of the list
+   *
+   * @return
+   */
+  E removeFirst();
+
+  /**
+   * Removes and returns the element at the tail of the list
+   *
+   * @return
+   */
+  E removeLast();
 
   /**
    * Removes all of the elements from this list (optional operation).

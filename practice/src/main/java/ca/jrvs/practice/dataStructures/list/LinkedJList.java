@@ -46,25 +46,45 @@ public class LinkedJList<E> implements JList<E> {
       throw new NullPointerException("Element is null");
   }
 
+  public boolean addFirst(E e) {
+    notNull(e);
+    if (head == null) {
+      firstElement(e);
+    } else {
+      Node<E> newHead = new Node<>(e, null, head);
+      head.prev = newHead;
+      head = newHead;
+      if (size == 1)
+        tail.prev = head;
+    }
+    size++;
+    return true;
+  }
+
+  public boolean addLast(E e) {
+    notNull(e);
+    if (head == null) {
+      firstElement(e);
+    } else {
+      Node<E> newTail = new Node<>(e, tail, null);
+      tail.next = newTail;
+      tail = newTail;
+      if (size == 1)
+        head.next = tail;
+    }
+    size++;
+    return true;
+  }
+
+  private void firstElement(E e) {
+      head = new Node<>(e, null, null);
+      tail = head;
+  }
+
   @Override
   public boolean add(E e) {
     notNull(e);
-    size++;
-    if (head == null) {
-      head = new Node<>(e, null, null);
-      tail = head;
-    } else {
-      Node<E> newTail = new Node<>(e, tail, null);
-      if (size == 2) {
-        tail = newTail;
-        head.next = tail;
-        return true;
-      }
-
-      tail.next = newTail;
-      tail = newTail;
-    }
-    return true;
+    return addLast(e);
   }
 
   @Override
@@ -130,20 +150,44 @@ public class LinkedJList<E> implements JList<E> {
   }
 
   @Override
+  public E removeFirst() {
+    if (head ==null)
+      return null;
+
+    E result = head.element;
+    if (size == 1)
+      head = tail = null;
+    else
+      head = head.next;
+
+    size--;
+    return result;
+  }
+
+  @Override
+  public E removeLast() {
+    if (head == null)
+      return null;
+
+    E result = tail.element;
+    if (size == 1)
+      head = tail = null;
+    else
+      tail = tail.prev;
+
+    size--;
+    return result;
+  }
+
+  @Override
   public E remove(int index) {
     inRange(index);
 
     E result;
-    size--;
-    if (size == 0) {
-      result = head.element;
-      head = tail = null;
-    } else if (index == 0) {
-      result = head.element;
-      head = head.next;
-    } else if (index == (size + 1)) {
-      result = tail.element;
-      tail = tail.prev;
+    if (index == 0) {
+      return removeFirst();
+    } else if (index == (size - 1)) {
+      return removeLast();
     } else {
       result = get(index);
       int i = 0;
@@ -152,6 +196,7 @@ public class LinkedJList<E> implements JList<E> {
         if (i == index) {
           current.prev.next = current.next;
           current.next.prev = current.prev;
+          size--;
           return result;
         }
         current = current.next;

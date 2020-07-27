@@ -70,6 +70,26 @@ public class ArrayJList<E> implements JList<E> {
   }
 
   @Override
+  public boolean addFirst(E e) {
+    return true;
+  }
+
+  @Override
+  public boolean addLast(E e) {
+    return true;
+  }
+
+  @Override
+  public E removeFirst() {
+    return null;
+  }
+
+  @Override
+  public E removeLast() {
+    return null;
+  }
+
+  @Override
   public Object[] toArray() {
     return Arrays.copyOf(elementData, size);
   }
