@@ -1,5 +1,7 @@
 package ca.jrvs.practice.dataStructures.list;
 
+import java.util.Objects;
+
 public class Employee implements Comparable<Employee> {
 
   private int id;
@@ -57,6 +59,26 @@ public class Employee implements Comparable<Employee> {
 
   public void setSalary(long salary) {
     this.salary = salary;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (!(o instanceof Employee)) {
+      return false;
+    }
+    Employee employee = (Employee) o;
+    return id == employee.id &&
+        age == employee.age &&
+        salary == employee.salary &&
+        name.equals(employee.name);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, name, age, salary);
   }
 
   @Override
