@@ -35,6 +35,15 @@ public class JBSTree<E> implements JTree<E> {
     this.comparator = comparator;
   }
 
+  public int size() {
+    return size;
+  }
+
+  public void clear() {
+    root = null;
+    size = 0;
+  }
+
   /**
    * Insert an object into the BST.
    * Please review the BST property.
