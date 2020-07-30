@@ -35,8 +35,8 @@ public abstract class DataAccessObject<T extends DataTransferObject> {
       return key;
     } catch (SQLException e) {
       JDBCExecutor.LOGGER.error("SQL error", e);
-      throw new RuntimeException(e);
     }
+    return -1;
   }
 
 }

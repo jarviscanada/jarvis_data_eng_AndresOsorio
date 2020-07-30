@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-import javax.management.relation.RoleUnresolved;
 
 public class CustomerDAO extends DataAccessObject<Customer> {
 
@@ -59,6 +58,13 @@ public class CustomerDAO extends DataAccessObject<Customer> {
   @Override
   public Customer update(Customer dto) {
     Customer customer = null;
+
+    try {
+      this.connection.setAutoCommit(false);
+    } catch (SQLException e) {
+      JDBCExecutor.LOGGER.error("SQL connection error", e);
+    }
+
     try (PreparedStatement statement = this.connection.prepareStatement(UPDATE);) {
       statement.setString(1, dto.getFirstName());
       statement.setString(2, dto.getLastName());
@@ -70,8 +76,14 @@ public class CustomerDAO extends DataAccessObject<Customer> {
       statement.setString(8, dto.getZipCode());
       statement.setLong(9, dto.getId());
       statement.execute();
+      this.connection.commit();
       customer = this.findById(dto.getId());
     } catch (SQLException e) {
+      try {
+        this.connection.rollback();
+      } catch (SQLException e1) {
+        JDBCExecutor.LOGGER.error("SQL update error: rolling back transaction");
+      }
       JDBCExecutor.LOGGER.error("SQL Update error", e);
     }
     return customer;
