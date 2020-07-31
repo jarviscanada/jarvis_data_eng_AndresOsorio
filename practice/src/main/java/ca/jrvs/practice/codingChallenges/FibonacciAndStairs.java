@@ -45,4 +45,20 @@ public class FibonacciAndStairs {
     return computed[n - 1];
   }
 
+  /**
+   * Big-O: O(n^2)
+   * Justification: see fibRecursive
+   */
+  public static int stairsRecursive(int n) {
+    return fibRecursive(n + 1);
+  }
+
+  /**
+   * Big-O(n^2)
+   * Justification: see fibMemoized
+   */
+  public static int stairsMemoized(int n) {
+    return fibMemoized(n + 1);
+  }
+
 }
