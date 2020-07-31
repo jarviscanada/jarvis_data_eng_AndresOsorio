@@ -34,4 +34,9 @@ public class MapEqualsTest {
   public void nodeEquals() {
     assertTrue(mapComparator.nodeEquals(m1, m2));
   }
+
+  @Test
+  public void mapEquals() {
+    assertTrue(mapComparator.mapEquals((HashMap)m1, (HashMap)m2));
+  }
 }
