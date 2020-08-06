@@ -1,23 +1,9 @@
 package ca.jrvs.apps.twitter.model;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import java.util.List;
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "created_at",
-    "id",
-    "id_str",
-    "text",
-    "entities",
-    "coordinates",
-    "retweet_count",
-    "favorite_count",
-    "favorited",
-    "retweeted"
-})
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Tweet {
 
   @JsonProperty("created_at")
@@ -29,9 +15,9 @@ public class Tweet {
   @JsonProperty("text")
   private String text;
   @JsonProperty("entities")
-  private List<Entity> entities;
+  private Entity entities;
   @JsonProperty("coordinates")
-  private List<Coordinates> coordinates;
+  private Coordinates coordinates;
   @JsonProperty("retweet_count")
   private int retweetCount;
   @JsonProperty("favorite_count")
@@ -41,11 +27,15 @@ public class Tweet {
   @JsonProperty("retweeted")
   private boolean retweeted;
 
+  /**
+   * Default constructor for jackson objectMapper; deserialization
+   */
   public Tweet() {
+
   }
 
   public Tweet(String createdAt, long id, String idStr, String text,
-      List<Entity> entities, List<Coordinates> coordinates, int retweetCount, int favoriteCount,
+      Entity entities, Coordinates coordinates, int retweetCount, int favoriteCount,
       boolean favorited, boolean retweeted) {
     this.createdAt = createdAt;
     this.id = id;
@@ -100,22 +90,22 @@ public class Tweet {
   }
 
   @JsonProperty("entities")
-  public List<Entity> getEntities() {
+  public Entity getEntities() {
     return entities;
   }
 
   @JsonProperty("entities")
-  public void setEntities(List<Entity> entities) {
+  public void setEntities(Entity entities) {
     this.entities = entities;
   }
 
   @JsonProperty("coordinates")
-  public List<Coordinates> getCoordinates() {
+  public Coordinates getCoordinates() {
     return coordinates;
   }
 
   @JsonProperty("coordinates")
-  public void setCoordinates(List<Coordinates> coordinates) {
+  public void setCoordinates(Coordinates coordinates) {
     this.coordinates = coordinates;
   }
 

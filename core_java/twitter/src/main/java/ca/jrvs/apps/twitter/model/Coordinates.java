@@ -1,28 +1,39 @@
 package ca.jrvs.apps.twitter.model;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Coordinates {
 
-  final private String type = "Point";
-  private Map<String, Double> values;
+  private final String type = "Point";
+  private List<Double> coordinates;
+
+  public Coordinates(){
+
+  }
 
   public Coordinates(double longitude, double latitude) {
-    values = new HashMap<>(2);
-    values.put("longitude", longitude);
-    values.put("latitude", latitude);
+    coordinates = new ArrayList<>(Arrays.asList(longitude, latitude));
   }
 
   public String getType() {
     return type;
   }
 
-  public Map<String, Double> getValues() {
-    return values;
+  public List<Double> getCoordinates() {
+    return coordinates;
   }
 
-  public void setValues(Map<String, Double> values) {
-    this.values = values;
+  public void setCoordinates(List<Double> coordinates) {
+    this.coordinates = coordinates;
+  }
+
+  @Override
+  public String toString() {
+    return "Coordinates{" +
+        "type='" + type + '\'' +
+        ", values=" + coordinates +
+        '}';
   }
 }

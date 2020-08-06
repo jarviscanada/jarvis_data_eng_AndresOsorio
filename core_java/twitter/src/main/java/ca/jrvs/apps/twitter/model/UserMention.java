@@ -1,19 +1,28 @@
 package ca.jrvs.apps.twitter.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.Arrays;
+
 public class UserMention {
 
   private long id;
+  @JsonProperty("id_str")
   private String idStr;
   private int[] indices;
   private String name;
-  private String screen_name;
+  @JsonProperty("screen_name")
+  private String screenName;
 
-  public UserMention(long id, String idStr, int[] indices, String name, String screen_name) {
+  public UserMention() {
+
+  }
+
+  public UserMention(long id, String idStr, int[] indices, String name, String screenName) {
     this.id = id;
     this.idStr = idStr;
     this.indices = indices;
     this.name = name;
-    this.screen_name = screen_name;
+    this.screenName = screenName;
   }
 
   public long getId() {
@@ -24,10 +33,12 @@ public class UserMention {
     this.id = id;
   }
 
+  @JsonProperty("id_str")
   public String getIdStr() {
     return idStr;
   }
 
+  @JsonProperty("id_str")
   public void setIdStr(String idStr) {
     this.idStr = idStr;
   }
@@ -48,11 +59,24 @@ public class UserMention {
     this.name = name;
   }
 
-  public String getScreen_name() {
-    return screen_name;
+  @JsonProperty("screen_name")
+  public String getScreenName() {
+    return screenName;
   }
 
-  public void setScreen_name(String screen_name) {
-    this.screen_name = screen_name;
+  @JsonProperty("screen_name")
+  public void setScreenName(String screenName) {
+    this.screenName = screenName;
+  }
+
+  @Override
+  public String toString() {
+    return "UserMention{" +
+        "id=" + id +
+        ", idStr='" + idStr + '\'' +
+        ", indices=" + Arrays.toString(indices) +
+        ", name='" + name + '\'' +
+        ", screenName='" + screenName + '\'' +
+        '}';
   }
 }
