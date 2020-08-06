@@ -1,11 +1,7 @@
 package ca.jrvs.apps.twitter.example;
 
 import ca.jrvs.apps.twitter.example.dto.Company;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
+import ca.jrvs.apps.twitter.util.JsonUtil;
 import java.io.IOException;
 
 public class JsonParser {
@@ -55,43 +51,10 @@ public class JsonParser {
       + "   ]\n"
       + "}";
 
-  /**
-   * Convert a java object into a JSON string (serialize java object)
-   * @param object
-   * @param prettyJson
-   * @param includeNullValues
-   * @return
-   * @throws JsonProcessingException
-   */
-  public static String toJson(Object object, boolean prettyJson, boolean includeNullValues)
-      throws JsonProcessingException {
-    ObjectMapper m = new ObjectMapper();
-    if (!includeNullValues)
-      m.setSerializationInclusion(Include.NON_NULL);
-
-    if (prettyJson)
-      m.enable(SerializationFeature.INDENT_OUTPUT);
-
-    return m.writeValueAsString(object);
-  }
-
-  /**
-   * Parse a JSON string into a java object (deserialize JSON string)
-   * @param json
-   * @param clazz
-   * @param <T>
-   * @return
-   * @throws IOException
-   */
-  public static <T> T toObjectFromJson(String json, Class clazz) throws IOException {
-    ObjectMapper m = new ObjectMapper();
-//    m.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-    return (T)m.readValue(json, clazz);
-  }
 
   public static void main(String[] args) throws IOException {
-    Company company = toObjectFromJson(companyStr, Company.class);
-    System.out.println(toJson(company, true, false));
+    Company company = JsonUtil.toObjectFromJson(companyStr, Company.class);
+    System.out.println(JsonUtil.toJson(company, true, false));
   }
 
 }
