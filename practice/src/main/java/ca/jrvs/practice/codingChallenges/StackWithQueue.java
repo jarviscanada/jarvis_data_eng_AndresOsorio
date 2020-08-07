@@ -3,6 +3,9 @@ package ca.jrvs.practice.codingChallenges;
 import java.util.Deque;
 import java.util.LinkedList;
 
+/**
+ * Ticket: https://www.notion.so/Implement-Stack-using-Queue-2f55819d14744382879be5010e3b4d8f
+ */
 public class StackWithQueue<E> {
 
   private Deque<E> queue1;
