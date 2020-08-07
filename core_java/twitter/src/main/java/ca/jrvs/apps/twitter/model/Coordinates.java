@@ -7,13 +7,13 @@ import java.util.List;
 public class Coordinates {
 
   private final String type = "Point";
-  private List<Double> coordinates;
+  private List<Float> coordinates;
 
   public Coordinates(){
 
   }
 
-  public Coordinates(double longitude, double latitude) {
+  public Coordinates(float longitude, float latitude) {
     coordinates = new ArrayList<>(Arrays.asList(longitude, latitude));
   }
 
@@ -21,11 +21,11 @@ public class Coordinates {
     return type;
   }
 
-  public List<Double> getCoordinates() {
+  public List<Float> getCoordinates() {
     return coordinates;
   }
 
-  public void setCoordinates(List<Double> coordinates) {
+  public void setCoordinates(List<Float> coordinates) {
     this.coordinates = coordinates;
   }
 

@@ -61,7 +61,6 @@ public class TwitterDaoUnitTest {
 
   @Test
   public void create() {
-    // exception expected
     when(mockHelper.httpPost(isNotNull())).thenThrow(new RuntimeException("mock"));
     try {
       dao.create(tweet);
@@ -80,7 +79,6 @@ public class TwitterDaoUnitTest {
 
   @Test
   public void findById() {
-    // exception expected
     when(mockHelper.httpGet(isNotNull())).thenThrow(new RuntimeException("mock"));
     try {
       dao.findById(tweet.getIdStr());
@@ -99,7 +97,6 @@ public class TwitterDaoUnitTest {
 
   @Test
   public void deleteById() {
-    // exception expected
     when(mockHelper.httpPost(isNotNull())).thenThrow(new RuntimeException("mock"));
     try {
       dao.deleteById(tweet.getIdStr());

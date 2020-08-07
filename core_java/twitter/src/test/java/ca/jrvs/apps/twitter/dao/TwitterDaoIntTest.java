@@ -27,12 +27,11 @@ public class TwitterDaoIntTest {
     HttpHelper httpHelper = new TwitterHttpHelper(consumerKey, consumerSecret, accessToken, tokenSecret);
     dao = new TwitterDao(httpHelper);
     coords = new Coordinates(1, 2);
+    tweet = new Tweet("", 1, "1", "create tweet test #random", null, coords, 0, 0, false, false);
   }
 
   @Test
   public void create() throws JsonProcessingException {
-    tweet = new Tweet("", 1, "1", "create tweet test #random", null, coords, 0, 0, false, false);
-
     System.out.println(JsonUtil.toJson(tweet, true, true));
 
     createdTweet = dao.create(tweet);
@@ -49,29 +48,25 @@ public class TwitterDaoIntTest {
 
   @Test
   public void findById() {
-    tweet = new Tweet("", 1, "1", "create tweet test #random", null, coords, 0, 0, false, false);
-
     createdTweet = dao.create(tweet);
 
     foundTweet = dao.findById(createdTweet.getIdStr());
 
-    assertEquals(tweet.getText(), createdTweet.getText());
+    assertEquals(tweet.getText(), foundTweet.getText());
 
     dao.deleteById(createdTweet.getIdStr());
 
-    System.out.println("\n" + createdTweet.toString() + "\n");
+    System.out.println("\n" + foundTweet.toString() + "\n");
   }
 
   @Test
   public void deleteById() {
-    tweet = new Tweet("", 1, "1", "create tweet test #random", null, coords, 0, 0, false, false);
-
     createdTweet = dao.create(tweet);
-
-    assertEquals(tweet.getText(), createdTweet.getText());
 
     foundTweet = dao.deleteById(createdTweet.getIdStr());
 
-    System.out.println("\n" + createdTweet.toString() + "\n");
+    assertEquals(tweet.getText(), foundTweet.getText());
+
+    System.out.println("\n" + foundTweet.toString() + "\n");
   }
 }
