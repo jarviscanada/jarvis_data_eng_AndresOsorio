@@ -6,11 +6,14 @@ import ca.jrvs.apps.twitter.model.Tweet;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 
+@org.springframework.stereotype.Service
 public class TwitterService implements Service {
 
   private CrdDao<Tweet, String> dao;
 
+  @Autowired
   public TwitterService(CrdDao dao) {
     this.dao = dao;
   }
@@ -28,8 +31,14 @@ public class TwitterService implements Service {
   }
 
   private boolean validateId(String id) {
+    boolean allDigits = true;
+    int i = 0;
+    while (i < id.length() && allDigits) {
+      if (!Character.isDigit(id.charAt(i++)))
+        allDigits = false;
+    }
     // Long.MAX_VALUE == 19 chars
-    return (id.length() > 0 && id.length() < 20);
+    return (allDigits && (id.length() > 0 && id.length() < 20));
   }
 
   private void validateCreateTweet(Tweet tweet) {
