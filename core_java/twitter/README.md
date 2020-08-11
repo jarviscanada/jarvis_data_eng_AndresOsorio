@@ -1,5 +1,5 @@
-#Twitter CLI App
-##Introduction
+# Twitter CLI App
+## Introduction
 This is a Java implementation of a CLI app that can post/show/delete
 Twitter posts via the Twitter REST API.
 TwitterApp is designed with the well known MVC (minus V) 
@@ -11,7 +11,7 @@ architecture (design pattern):
     interact with the underlying storage/service which is the Twitter REST API in this app
 - The controller layer interacts and parsers user input (CLI args in this APP)
 
-##Usage
+## Usage
 ```bash
 # general usage
 TwitterCLIApp post|show|delete [options]
@@ -26,7 +26,7 @@ TwitterCLIApp show "tweet_id"
 TwitterCLIApp delete "tweet_id1,tweet_id2,..."
 ```
 
-##Quick Start
+## Quick Start
 Package app using Maven:
 ```bash
 # clean and package (fat jar) app
@@ -67,7 +67,7 @@ docker run --rm \
     onehoax/twitter delete "1276568976764686343,1200145224103841792"
 ```
 
-##Design
+## Design
 UML Diagram:  
 
 ![alt text](assets/uml.png)
@@ -79,7 +79,7 @@ UML Diagram:
 - The app/main layer (entry point) initializes all components (and their dependencies)
     and runs the app with the given user input
 
-##Models
+## Models
 This app uses a simplified version of the Tweet object:
 - `created_at: String` 
 - `id: long`
@@ -116,7 +116,7 @@ Simplified Tweet object in JSON:
 }
 ```
 
-##Spring
+## Spring
 The Spring `@ComponnentScan` is used to define dependency relationships;
 each dependency of the project is annotated with `@Component` (or one
 of its stereotypes: `@Controller`, `@Service`, `@Repository`), which tells
@@ -130,7 +130,7 @@ that helps to configure Spring automatically) and implements the `run()`
 method from the `CommandLineRunner` interface, which replaces 
 the main method (entry point of app).
 
-##Docker
+## Docker
 The app can be dockerized as follows:
 ```bash
 # clean and package (fat jar) app
@@ -145,7 +145,7 @@ to `java -jar ...jar`, which lets the user run the docker image as
 the application without having to specify Java options 
 (e.g.: `docker run [docker options] ${image_tag} [app options]`).
 
-##Improvements
+## Improvements
 1. Use the complete Tweet object
 2. Include more options for posting action
 3. Improve unit testing
