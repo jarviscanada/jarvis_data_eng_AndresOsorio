@@ -18,11 +18,11 @@ Responsible, organized, disciplined, hard-working, fast-learning and goal-orient
                                         
 - **[Core Java Apps](./core_java):** Implemented 3 projects using core Java:
 
-  - **Java Grep App:** Searches for a text pattern recursively in a given directory and outputs matched lines to a file - implemented with Java 8 Streams
+  - **Java Grep App:** Searches for a text pattern recursively in a given directory and outputs matched lines to a file - implemented with Java 8 Streams.
     
-  - **JDBC:** Performs fundamental CRUD operations using the DAO pattern as an abstraction layer with DTOs as the actual objects encapsulating data to and from the data source
+  - **JDBC:** Performs fundamental CRUD operations using the DAO pattern as an abstraction layer with DTOs as the actual objects encapsulating data to and from the data source.
     
-  - **Twitter CLI App:** Posts/shows/deletes Twitter posts via the Twitter REST API - designed with the well-known MVC (minus V) architecture 
+  - **Twitter CLI App:** Posts/shows/deletes Twitter posts via the Twitter REST API - designed with the well-known MVC (minus V) architecture.
     
 - **[SpringBoot App](./springboot):** In-progress
 
