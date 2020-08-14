@@ -2,8 +2,8 @@
 Recent Computer Science graduate with a background in Behaviour Analysis; I have experience in a wide variety
 of fields that have provided me with the right professional and personal skills needed to succeed in the Software
 world. 90% of all the data in the world has been created in the last 2 years; Data Engineering 
-resonates with me because there is a need for qualified people to make sense of it through Software Engineering. 
-Responsible, organized, disciplined, hard-working, fast-learning and goal-oriented.
+resonates with me because there is a need for qualified individuals to make sense of it all and I love both engineering and the patterns that arise from data. 
+I am responsible, reliable, organized, disciplined, hard-working, fast-learning and goal-oriented.
 
 ## Skills
 **Proficient:** Java, OOP, JUnit, Linux/Bash, RDBMS/SQL, Agile/Scrum, Git, Maven
@@ -32,12 +32,15 @@ Responsible, organized, disciplined, hard-working, fast-learning and goal-orient
 
 - **[Spark/Scala](./spark):** Not started
 
+**Note:** All projects were tested using JUnit and Mockito.
+
 ## Professional Experiences
 **Software Developer, Jarvis, Toronto (2020-Present):**  
 
 - Worked in a small scrum team implementing Data Engineering projects
 - Developed products successfully through continuous participation in scrum events
 - Implemented projects using Java, Maven, SpringBoot, Bash, RDBMS/SQL, Git, Hadoop, Spark/Scala and Docker
+- Implemented both Integration and Unit Testing for each project using JUnit and Mockito
 - Used a Linux environment (centOS) for development
 
 **Social Worker, Community Living, Toronto (2015-2017):**  
