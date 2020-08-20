@@ -2,8 +2,8 @@ package ca.jrvs.apps.twitter.dao;
 
 import static org.junit.Assert.*;
 
-import ca.jrvs.apps.twitter.dao.helper.HttpHelper;
-import ca.jrvs.apps.twitter.dao.helper.TwitterHttpHelper;
+import ca.jrvs.apps.twitter.dao.http_helper.HttpHelper;
+import ca.jrvs.apps.twitter.dao.http_helper.TwitterHttpHelper;
 import ca.jrvs.apps.twitter.model.Coordinates;
 import ca.jrvs.apps.twitter.model.Tweet;
 import ca.jrvs.apps.twitter.util.JsonUtil;
