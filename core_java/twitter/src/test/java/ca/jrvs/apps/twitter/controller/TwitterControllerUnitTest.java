@@ -75,15 +75,7 @@ public class TwitterControllerUnitTest {
       assertTrue(true);
     }
 
-//    doReturn(Arrays.asList(tweet)).when(mockService).deleteTweets(new String[]{anyString()});
-
     List<Tweet> deletedTweets = controller.deleteTweet(new String[]{"456"});
-
-//    List<Tweet> deletedTweets = tweets;
-
-//    assertEquals(tweet.getId(), deletedTweets.get(0).getId());
-//    assertEquals(tweet.getText(), deletedTweets.get(0).getText());
-//    assertTrue(tweet == deletedTweets.get(0));
 
     verify(mockService).deleteTweets(new String[]{"456"});
   }
