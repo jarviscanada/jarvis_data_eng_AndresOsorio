@@ -1,5 +1,6 @@
 # Core Java Apps
-This project is under development. Since this project follows the GitFlow, the final work will be merged to the master branch after Team Code Team.
+Implementation of 3 applications using core Java and essential Java
+libraries and tools:
 
 1. [Java Grep App](./grep)
 2. [JDBC App](./jdbc)
