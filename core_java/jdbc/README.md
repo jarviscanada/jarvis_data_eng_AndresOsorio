@@ -1,4 +1,4 @@
-# JDBC
+# JDBC App
 ## Introduction
 This app uses a dockerized `PostgreSQL` instance with some filler tables to
 introduce basic `JDBC` functionality; fundamental `CRUD` operations are performed
