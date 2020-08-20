@@ -1,14 +1,14 @@
 # Andres Osorio . Jarvis Consulting
 Recent Computer Science graduate with a background in Behaviour Analysis; I have experience in a wide variety
 of fields that have provided me with the right professional and personal skills needed to succeed in the Software
-world. 90% of all the data in the world has been created in the last 2 years; Data Engineering 
+world. The amount of data being created every year is growing at an exponential rate and will continue do so; Data Engineering 
 resonates with me because there is a need for qualified individuals to make sense of it all and I love both engineering and the patterns that arise from data. 
 I am responsible, reliable, organized, disciplined, hard-working, fast-learning and goal-oriented.
 
 ## Skills
 **Proficient:** Java, OOP, JUnit, Linux/Bash, RDBMS/SQL, Agile/Scrum, Git, Maven
 
-**Competent:** : Rest APIs, Mockito, SpringBoot, C, Go, HTML, CSS, JavaScript/Node/Vue, Android Development
+**Competent:** REST APIs, Mockito, SpringBoot, C, Go, HTML, CSS, JavaScript/Node/Vue, Android Development
 
 **Familiar:** Blockchain, Operating Systems, AI/Machine Learning, CyberSecurity
 
@@ -20,7 +20,7 @@ I am responsible, reliable, organized, disciplined, hard-working, fast-learning 
 
   - **Java Grep App:** Searches for a text pattern recursively in a given directory and outputs matched lines to a file - implemented with Java 8 Streams.
     
-  - **JDBC:** Performs fundamental CRUD operations using the DAO pattern as an abstraction layer with DTOs as the actual objects encapsulating data to and from the data source.
+  - **JDBC App:** Performs fundamental CRUD operations using the DAO pattern as an abstraction layer with DTOs as the actual objects encapsulating data to and from the data source.
     
   - **Twitter CLI App:** Posts/shows/deletes Twitter posts via the Twitter REST API - designed with the well-known MVC (minus V) architecture.
     
@@ -84,4 +84,4 @@ The programs: 1) taught a new behavior, 2) increased desired behavior, and/or 3)
 ## Certificates & Awards & Activities
 - Top 15% (2017 - 2019): Faculty of Electrical Engineering & Computer Science, York University
 - Chair's Honour Roll (2017 - 2018): Department of Mathematics & Statistics, York University
-- Dean's List (2012 - 2015): George Brown
+- Dean's List (2012 - 2015): George Brown College
