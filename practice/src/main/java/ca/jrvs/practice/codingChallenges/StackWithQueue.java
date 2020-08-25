@@ -35,20 +35,20 @@ public class StackWithQueue<E> {
   }
 
   /**
-   * Big-O: O(1)
-   * Justification: adding node to LinkedList is O(1) (tail reference)
+   * Big-O:         O(1) time; O(1) space.
+   * Justification: adding node to LinkedList is O(1) (tail reference).
    */
   public void pushTwoQueues(E element) {
     queue1.addLast(element);
   }
 
   /**
-   * Big-O: O(n)
+   * Big-O:         O(n) time; O(n) space.
    * Justification: have to iterate through (n - 1) elements
-   *                to pop the head of the stack (tail of queue)
+   *                to pop the head of the stack (tail of queue).
    *
    * Enqueue first (n - 1) elements in queue1 to queue2; remove last element in queue1 (top of stack);
-   * switch pointers so queue1 now points to queue2 and vice-versa (queue2 is a helper queue for popping operation)
+   * switch pointers so queue1 now points to queue2 and vice-versa (queue2 is a helper queue for popping operation).
    */
   public E popTwoQueues() {
     while (queue1.size() > 1) {
@@ -65,8 +65,8 @@ public class StackWithQueue<E> {
   }
 
   /**
-   * Big-O: O(n)
-   * Justification: with each push we reverse the order of the elements in the queue so that it keeps the order of a stack
+   * Big-O:         O(n) time; O(n) space.
+   * Justification: with each push we reverse the order of the elements in the queue so that it keeps the order of a stack.
    */
   public void pushOneQueue(E element) {
     queue.addLast(element);
@@ -80,9 +80,9 @@ public class StackWithQueue<E> {
   }
 
   /**
-   * Big-O: O(1)
-   * Justification: elements in queue are alreay stack order from the push operation, therefore
-   *                popping is just removing the first element of the queue (dequeing)
+   * Big-O:         O(1) time; O(1) space.
+   * Justification: elements in queue are already stack order from the push operation, therefore
+   *                popping is just removing the first element of the queue (dequeing).
    */
   public E popOneQueue() {
     return queue.removeFirst();

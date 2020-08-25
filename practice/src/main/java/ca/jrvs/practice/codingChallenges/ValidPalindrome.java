@@ -10,9 +10,9 @@ public class ValidPalindrome {
   }
 
   /**
-   * Big-O:         O(n)
+   * Big-O:         O(n) time; O(1) space.
    * Justification: we have to traverse all chars of the input string (from both sides) once
-   *                and all ops in each iteration are O(1)
+   *                and all ops in each iteration are O(1).
    */
   public static boolean twoPointers(String s) {
     s = s.toLowerCase();
@@ -41,8 +41,9 @@ public class ValidPalindrome {
   }
 
   /**
-   * Big-O:         O(n)
-   * Justification: this method calls itself at most n/2 times and performs O(1) ops each time
+   * Big-O:         O(n) time; O(n) space.
+   * Justification: this method calls itself at most n/2 times and performs O(1) ops each time;
+   *                recursive tree with n/2 nodes (time complexity) and n/2 height (space complexity - call stack).
    */
   public static boolean recursive(String s, int left, int right) {
     if (left >= right)

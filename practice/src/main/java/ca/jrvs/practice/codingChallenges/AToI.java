@@ -6,9 +6,9 @@ package ca.jrvs.practice.codingChallenges;
 public class AToI {
 
   /**
-   * Big-O: O(n)
+   * Big-O:         O(n) time; O(n) space.
    * Justification: the Java Integer.parseInt method interates
-   *                through the whole string to be able to parse into an int
+   *                through the whole string to be able to parse into an int.
    */
   public static int convertJavaApi(String str) {
     int i = 0;
@@ -51,9 +51,9 @@ public class AToI {
   }
 
   /**
-   * Big-O: O(n)
+   * Big-O:         O(n) time; O(1) space.
    * Justification: have to iterate through the input string of size n
-   *                and perform O(1) operations in each iteration
+   *                and perform O(1) operations in each iteration.
    */
   public static int convert(String str) {
     str = str.trim();

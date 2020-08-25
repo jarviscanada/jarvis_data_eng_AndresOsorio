@@ -10,9 +10,10 @@ import java.util.Map;
 public class ValidAnagram {
 
   /**
-   * Big-O:         O(nlgn)
-   * Justification: if t is an anagram of s then they will be the same string after sorting;
-   *                Arrays.sort() is O(nlogn), all other operations are < O(nlong)
+   * Big-O:         O(nlgn) time; O(n) space.
+   * Justification: Arrays.sort() is O(nlogn), all other operations are < O(nlong).
+   *
+   * If t is an anagram of s then they will be the same string after sorting.
    */
   public static boolean sorting(String s, String t) {
     if (s.length() != t.length())
@@ -31,12 +32,13 @@ public class ValidAnagram {
   }
 
   /**
-   * Big-O:         O(n) time; O(1) space
-   * Justification: use a map to put chars of strings as keys and the number of their occurrences as values;
-   *                increment value of char if present in s and decrement it if present in t; if t is an anagram
-   *                of s then the map must contain a value of 0 for each char in the end;
-   *                it is O(n) time bc map operations used are O(1);
-   *                it is O(1) space bc although we use extra space, the map's size stays constant no matter how large n is
+   * Big-O:         O(n) time; O(1) space.
+   * Justification: it is O(n) time bc map operations used are O(1);
+   *                it is O(1) space bc although we use extra space, the map's size stays constant no matter how large n is.
+   *
+   * Use a map to put chars of strings as keys and the number of their occurrences as values;
+   * increment value of char if present in s and decrement it if present in t; if t is an anagram
+   * of s then the map must contain a value of 0 for each char in the end.
    */
   public static boolean map(String s, String t) {
     if (s.length() != t.length())
