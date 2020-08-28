@@ -12,15 +12,15 @@ import java.util.Set;
 public class MapEquals {
 
   /**
-   * Big-O: O(n)
-   * Justification: have to compare all the elements in the maps
+   * Big-O:         O(n) time; O(n) space.
+   * Justification: have to compare all the elements in the maps.
    */
   public <K, V> boolean nodeEquals(Map<K, V> m1, Map<K, V> m2) {
-    Set<Map.Entry<K, V>> keys1 =  m1.entrySet();
-    Set<Map.Entry<K, V>> keys2 =  m2.entrySet();
+    Set<Map.Entry<K, V>> entries1 =  m1.entrySet();
+    Set<Map.Entry<K, V>> entries2 =  m2.entrySet();
 
-    Iterator<Entry<K, V>> iterator1 = keys1.iterator();
-    Iterator<Entry<K, V>> iterator2 = keys2.iterator();
+    Iterator<Entry<K, V>> iterator1 = entries1.iterator();
+    Iterator<Entry<K, V>> iterator2 = entries2.iterator();
 
     while (iterator1.hasNext()) {
       if (!iterator1.next().equals(iterator2.next()))
@@ -31,8 +31,8 @@ public class MapEquals {
   }
 
   /**
-   * Big-O: O(n)
-   * Justification: have to compare all the elements in the maps
+   * Big-O:         O(n) time; O(n) space.
+   * Justification: have to compare all the elements in the maps.
    */
   public <K, V> boolean mapEquals(HashMap<K, V> m1, HashMap<K, V> m2) {
     return m1.equals(m2);

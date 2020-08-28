@@ -14,8 +14,8 @@ public class ValidParenthesis {
   private static Deque<Character> stack;
 
   /**
-   * Big-O: O(n)
-   * Justification: have to traverse given expression with n chars; stack and map operations are O(1)
+   * Big-O:         O(n) time; O(n) space.
+   * Justification: have to traverse given expression with n chars; stack and map operations are O(1).
    */
   public static boolean validParentheses(String exp) {
     stack = new LinkedList<>();

@@ -10,11 +10,12 @@ import java.util.Set;
 public class DuplicateLinkedListNode {
 
   /**
-   * Big-O:         O(n^2) time; O(n) space
+   * Big-O:         O(n^2) time; O(n) space.
    * Justification: we have to iterate through the whole list (O(n)) and remove each duplicate (O(n)).
-   *                a set doesn't allow duplicates; therefore we can check duplicates in the list with a set;
-   *                if the current element is a duplicate (already in set) then we remove it and don't increment index
-   *                bc we have to consider that same index again;
+   *
+   *  A set doesn't allow duplicates; therefore we can check duplicates in the list with a set;
+   *  if the current element is a duplicate (already in set) then we remove it and don't increment index
+   *  bc we have to consider that same index again.
    */
   public static <E> void removeDuplicates(List<E> list) {
     Set<E> set = new HashSet<>();
