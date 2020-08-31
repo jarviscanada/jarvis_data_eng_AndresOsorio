@@ -11,6 +11,6 @@ target/
 dependency-reduced-pom.xml
 
 # extra files
-helper*
+my_helper*
 out
 log
