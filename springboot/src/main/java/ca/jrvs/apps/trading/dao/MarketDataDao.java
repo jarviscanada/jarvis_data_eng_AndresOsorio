@@ -14,6 +14,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.conn.HttpClientConnectionManager;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.conn.BasicHttpClientConnectionManager;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 import org.slf4j.Logger;
@@ -37,6 +38,15 @@ public class MarketDataDao implements CrudRepository<IexQuote, String> {
   private MarketDataConfig marketDataConfig;
 
   @Autowired
+  public MarketDataDao() {
+    HttpClientConnectionManager httpClientConnectionManager = new BasicHttpClientConnectionManager();
+    MarketDataConfig marketDataConfig = new MarketDataConfig();
+    marketDataConfig.setHost("https://cloud.iexapis.com/stable");
+    marketDataConfig.setToken(System.getenv("token"));
+    this.httpClientConnectionManager = httpClientConnectionManager;
+    this.marketDataConfig = marketDataConfig;
+  }
+
   public MarketDataDao(HttpClientConnectionManager httpClientConnectionManager, MarketDataConfig marketDataConfig) {
     this.httpClientConnectionManager = httpClientConnectionManager;
     this.marketDataConfig = marketDataConfig;
@@ -74,9 +84,9 @@ public class MarketDataDao implements CrudRepository<IexQuote, String> {
    * Get an IexQuote
    *
    * @param ticker
+   * @return an IexQuote Optional object
    * @throws IllegalArgumentException if given ticker is invalid
    * @throws DataRetrievalFailureException if HTTP request failed
-   * @return
    */
   @Override
   public Optional<IexQuote> findById(String ticker) {
@@ -123,11 +133,7 @@ public class MarketDataDao implements CrudRepository<IexQuote, String> {
     String url = getBatchUrl(tickersList);
     Optional<String> response = Optional.empty();
 
-    try {
-      response = executeHttpGet(url);
-    } catch (DataRetrievalFailureException e) {
-      throw new DataRetrievalFailureException("HTTP request failed", e);
-    }
+    response = executeHttpGet(url);
 
     if (!response.isPresent())
       return quotes;
