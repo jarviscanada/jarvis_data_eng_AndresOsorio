@@ -1,7 +1,7 @@
 # Andres Osorio . Jarvis Consulting
 Recent Computer Science graduate with a background in Behaviour Analysis; I have experience in a wide variety
-of fields that have provided me with the right professional and personal skills needed to succeed in the Software
-world. The amount of data being created every year is growing at an exponential rate and will continue do so; Data Engineering 
+of fields that have provided me with the right professional and personal skills needed to succeed in the software
+industry. The amount of data being created every year is growing at an exponential rate and will continue do so; Data Engineering 
 resonates with me because there is a need for qualified individuals to make sense of it all and I love both engineering and the patterns that arise from data. 
 I am responsible, reliable, organized, disciplined, hard-working, fast-learning and goal-oriented.
 
@@ -35,45 +35,41 @@ I am responsible, reliable, organized, disciplined, hard-working, fast-learning 
 **Note:** All projects were tested using JUnit and Mockito.
 
 ## Professional Experiences
-**Software Developer, Jarvis, Toronto (2020-Present):**  
+**Software Developer, Jarvis, Toronto (2020 - Present):**  
+Worked in a small scrum team building Data Engineering projects.
+Developed products successfully through continuous participation in scrum events and agile best practices.
+Implemented projects using Java, Maven, SpringBoot, Bash, RDBMS/SQL, Git, Hadoop, Spark/Scala and Docker.
+Performed both integration and unit testing for each project using JUnit and Mockito.
+Used a Linux environment (centOS) for development.
 
-- Worked in a small scrum team implementing Data Engineering projects
-- Developed products successfully through continuous participation in scrum events
-- Implemented projects using Java, Maven, SpringBoot, Bash, RDBMS/SQL, Git, Hadoop, Spark/Scala and Docker
-- Implemented both Integration and Unit Testing for each project using JUnit and Mockito
-- Used a Linux environment (centOS) for development
-
-**Social Worker, Community Living, Toronto (2015-2017):**  
-
-- Worked in the TRE ADD (Treatment, Research and Education for Autism and Developmental Disabilities)
-  program in a respite house
-- Provided patients support with their daily activities (Hygiene, feeding and medication)
-- Led recreational activities and behavioural programming to reduce problem behaviours and reinforce appropriate ones
+**Social Worker, Community Living, Toronto (2015 - 2017):**  
+Worked in the TRE ADD (Treatment, Research and Education for Autism and Developmental Disabilities)
+program in a respite house.
+Provided patients support with their daily activities (Hygiene, feeding and medication) and
+led behavioural programming to reduce problem behaviours and reinforce appropriate ones.
 
 **ESL Instructor, Berlitz, Colombia (2009 - 2011):**  
-
-- Taught English to students of all ages and levels
-- Followed the company's dynamic and conversational teaching method and implemented it to my own approach
-- Taught in one-on-one settings, as well as in groups ranging from 2-20 students
+Taught English to students of all ages and levels in 1:1 settings as well as in groups ranging from 2-20 students.
+Followed the company's dynamic and conversational teaching method and implemented it to my own approach.
 
 ## Education & Academic Projects
-**York University, Toronto (2017-2019)**, Bachelor of Arts, Computer Science
+**York University, Toronto (2017 - 2019)**, Bachelor of Arts, Computer Science
 
 - **Language Analyzer:** 
 Desinged and implemented 1) a small Java-like programming language and 2) its two associated functionalities:
 Java-like code generation and type checking.
 The project was developed on the Eiffel Testing Framework (ETF) - Eiffel is an object-oriented and contract-based language.
 Implemented the project with the Visitor Design Pattern because it involves a language structure 
-(classes, attrs, methods, etc.) that is meant to be closed for modifications and language operations 
+(classes, attrs, methods, etc.) that is meant to be closed for modification and language operations 
 (code generation and type-checking) which are open for modification - this fulfills the open-close principle 
 which is a requirement to apply the visitor pattern.
 
 - **Gym Platform:** 
 Developed a fully responsive Single-Page-Webapp that works as a platform to deliver instructional content on physical training 
 and nutrition; it uses vue.js + materialize for the front end and node.js + firebase for the back end (authorization and deployment).
-It supports registering and logging-in/out (plans page is only accessible to logged-in users).
+It supports registering and logging-in/out.
 
-**George Brown College, Toronto (2012-2015)**, Advanced Diploma, Behavioral Science Technology
+**George Brown College, Toronto (2012 - 2015)**, Advanced Diploma, Behavioral Science Technology
 
 - **Behavior Modification:** 
 Successfully implemented various behavior modification programs at several placements (UHN, CAMH, Surrey Place,
