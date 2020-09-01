@@ -20,15 +20,15 @@ public class Application implements CommandLineRunner {
 
   private Logger logger = LoggerFactory.getLogger(Application.class);
 
-  private QuoteController quoteController;
+//  private QuoteController quoteController;
 
 //  @Value("${app.init.dailyList}")
 //  private String[] intDailyList;
 
-  @Autowired
-  public Application(QuoteController quoteController) {
-    this.quoteController = quoteController;
-  }
+//  @Autowired
+//  public Application(QuoteController quoteController) {
+//    this.quoteController = quoteController;
+//  }
 
   @Override
   public void run(String... args) throws Exception {
