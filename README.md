@@ -53,7 +53,7 @@ Taught English to students of all ages and levels in 1:1 settings as well as in 
 Followed the company's dynamic and conversational teaching method and implemented it to my own approach.
 
 ## Education & Academic Projects
-**York University, Toronto (2017 - 2019)**, Bachelor of Arts, Computer Science
+**York University, Toronto (2017 - 2019),** Bachelor of Arts, Computer Science
 
 - **Language Analyzer:** 
 Desinged and implemented 1) a small Java-like programming language and 2) its two associated functionalities:
@@ -69,7 +69,7 @@ Developed a fully responsive Single-Page-Webapp that works as a platform to deli
 and nutrition; it uses vue.js + materialize for the front end and node.js + firebase for the back end (authorization and deployment).
 It supports registering and logging-in/out.
 
-**George Brown College, Toronto (2012 - 2015)**, Advanced Diploma, Behavioral Science Technology
+**George Brown College, Toronto (2012 - 2015),** Advanced Diploma, Behavioral Science Technology
 
 - **Behavior Modification:** 
 Successfully implemented various behavior modification programs at several placements (UHN, CAMH, Surrey Place,
@@ -78,6 +78,6 @@ collaborated and communicated with supervisors at George Brown and placements to
 The programs: 1) taught a new behavior, 2) increased desired behavior, and/or 3) decreased problem behavior.
 
 ## Certificates & Awards & Activities
-- Top 15% (2017 - 2019): Faculty of Electrical Engineering & Computer Science, York University
-- Chair's Honour Roll (2017 - 2018): Department of Mathematics & Statistics, York University
-- Dean's List (2012 - 2015): George Brown College
+- **Top 15% (2017 - 2019):** Faculty of Electrical Engineering & Computer Science, York University
+- **Chair's Honour Roll (2017 - 2018):** Department of Mathematics & Statistics, York University
+- **Dean's List (2012 - 2015):** George Brown College
