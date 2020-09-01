@@ -6,7 +6,7 @@ package ca.jrvs.practice.codingChallenges;
 public class FibonacciAndStairs {
 
   /**
-   * Big-O: O(2^n)
+   * Big-O:         O(2^n) time; O(n) space.
    * Justification: values are not cached, instead they are recomputed every time they are needed
    *                and therefore the number of recursive calls increases exponentially as the input increases;
    *                this creates a recursion tree with 2^n nodes (calls) and height n (O(n) space complexity).
@@ -22,7 +22,7 @@ public class FibonacciAndStairs {
   }
 
   /**
-   * Big-O: O(n)
+   * Big-O:         O(n) time; O(n) space.
    * Justification: values are cached (memoized) whenever they're computed; this removes the need to
    *                recompute values over and over again and the method only calls itself at most 2n times.
    */
@@ -46,16 +46,16 @@ public class FibonacciAndStairs {
   }
 
   /**
-   * Big-O: O(n^2)
-   * Justification: see fibRecursive
+   * Big-O:         O(n^2) time; O(n) space.
+   * Justification: see fibRecursive.
    */
   public static int stairsRecursive(int n) {
     return fibRecursive(n + 1);
   }
 
   /**
-   * Big-O(n^2)
-   * Justification: see fibMemoized
+   * Big-O:         O(n) time; O(n) space.
+   * Justification: see fibMemoized.
    */
   public static int stairsMemoized(int n) {
     return fibMemoized(n + 1);

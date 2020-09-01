@@ -10,8 +10,8 @@ import java.util.Map;
 public class TwoSum {
 
   /**
-   * Big-O: O(n^2)
-   * Justification: have to compare each element to the whole list
+   * Big-O:         O(n^2) time; O(1) space.
+   * Justification: have to compare each element to the whole list.
    */
   public static int[] bruteForce(int[] nums, int target) {
     int x, y = 0;
@@ -28,9 +28,9 @@ public class TwoSum {
   }
 
   /**
-   * Big-O: O(nlog(n))
-   * Justification: we do at most n iterations when looking for the two indices, but
-   *                any sorting algorithm is at least O(nlog(n))
+   * Big-O:         O(nlog(n)) time; O(1) space.
+   * Justification: we do at most n iterations when looking for the two indices by traversing inwards from both ends of the array,
+   *                but any sorting algorithm is at least O(nlog(n)).
    */
   public static int[] sorting(int[] nums, int target) {
     int left = 0;
@@ -54,11 +54,11 @@ public class TwoSum {
   }
 
   /**
-   * Big-O: O(n)
+   * Big-O:         O(n) time; O(n) space.
    * Justification: we iterate through the array at most n times to
    *                populate and check the map; since HashMap basic operations (put, get)
    *                are O(1) (containsKey() is just a get() that throws away the retrieved value)
-   *                then the whole function is O(n)
+   *                then the whole function is O(n).
    */
   public static int[] map(int[] nums, int target) {
     Map<Integer, Integer> map = new HashMap<>();
