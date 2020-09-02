@@ -6,6 +6,7 @@ import ca.jrvs.apps.trading.dao.MarketDataDao;
 import ca.jrvs.apps.trading.dao.QuoteDao;
 import ca.jrvs.apps.trading.model.config.MarketDataConfig;
 import ca.jrvs.apps.trading.model.domain.IexQuote;
+import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.http.conn.HttpClientConnectionManager;
 import org.apache.http.impl.conn.BasicHttpClientConnectionManager;
 import org.junit.Before;
@@ -24,7 +25,8 @@ public class QuoteServiceIntTest {
     marketDataConfig.setHost("https://cloud.iexapis.com/stable");
     marketDataConfig.setToken(System.getenv("token"));
     marketDataDao = new MarketDataDao(httpClientConnectionManager, marketDataConfig);
-    quoteDao = new QuoteDao();
+    BasicDataSource basicDataSource = new BasicDataSource();
+    quoteDao = new QuoteDao(basicDataSource);
     quoteService = new QuoteService(quoteDao, marketDataDao);
   }
 
