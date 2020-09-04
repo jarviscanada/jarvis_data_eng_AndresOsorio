@@ -4,7 +4,9 @@ import ca.jrvs.apps.trading.model.config.MarketDataConfig;
 import javax.sql.DataSource;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.http.conn.HttpClientConnectionManager;
-import org.apache.http.impl.conn.BasicHttpClientConnectionManager;
+import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -13,28 +15,34 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan(basePackages = {"ca.jrvs.apps.trading.dao", "ca.jrvs.apps.trading.service"})
 public class TestConfig {
 
+  private Logger logger = LoggerFactory.getLogger(TestConfig.class);
+
   @Bean
   public MarketDataConfig marketDataConfig() {
-    System.out.println("Creating market data config");
+    logger.info("Creating market data config");
 
     MarketDataConfig marketDataConfig = new MarketDataConfig();
     marketDataConfig.setHost("https://cloud.iexapis.com/stable");
     marketDataConfig.setToken(System.getenv("token"));
 
-    System.out.println(marketDataConfig.getHost() + " " + marketDataConfig.getToken());
+    logger.info(marketDataConfig.getHost() + " " + marketDataConfig.getToken());
     return marketDataConfig;
   }
 
   @Bean
   public HttpClientConnectionManager httpClientConnectionManager() {
-    System.out.println("Creating http client");
+    logger.info("Creating http client");
 
-    return new BasicHttpClientConnectionManager();
+    PoolingHttpClientConnectionManager cm = new PoolingHttpClientConnectionManager();
+    cm.setMaxTotal(50);
+    cm.setDefaultMaxPerRoute(50);
+
+    return cm;
   }
 
   @Bean
   public DataSource dataSource() {
-    System.out.println("Creating data source");
+    logger.info("Creating data source");
 
     String url = System.getenv("PSQL_URL");
     String user = System.getenv("PSQL_USER");
@@ -45,7 +53,7 @@ public class TestConfig {
     basicDataSource.setUsername(user);
     basicDataSource.setPassword(password);
 
-    System.out.println(basicDataSource.getUrl() + " " + basicDataSource.getUsername() + " " + basicDataSource.getPassword());
+    logger.info(basicDataSource.getUrl() + " " + basicDataSource.getUsername() + " " + basicDataSource.getPassword());
 
     return basicDataSource;
   }

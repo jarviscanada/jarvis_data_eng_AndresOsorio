@@ -2,29 +2,24 @@ package ca.jrvs.apps.trading.dao;
 
 import static org.junit.Assert.*;
 
-import ca.jrvs.apps.trading.model.config.MarketDataConfig;
+import ca.jrvs.apps.trading.TestConfig;
 import ca.jrvs.apps.trading.model.domain.IexQuote;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
-import org.apache.http.conn.HttpClientConnectionManager;
-import org.apache.http.impl.conn.BasicHttpClientConnectionManager;
-import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = {TestConfig.class})
 public class MarketDataDaoIntTest {
 
+  @Autowired
   MarketDataDao marketDataDao;
-
-  @Before
-  public void setUp() throws Exception {
-    HttpClientConnectionManager httpClientConnectionManager = new BasicHttpClientConnectionManager();
-    MarketDataConfig marketDataConfig = new MarketDataConfig();
-    marketDataConfig.setHost("https://cloud.iexapis.com/stable");
-    marketDataConfig.setToken(System.getenv("token"));
-    marketDataDao = new MarketDataDao(httpClientConnectionManager, marketDataConfig);
-  }
 
   @Test
   public void findById() {

@@ -14,7 +14,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.conn.HttpClientConnectionManager;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.apache.http.impl.conn.BasicHttpClientConnectionManager;
+import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 import org.slf4j.Logger;
@@ -39,11 +39,14 @@ public class MarketDataDao implements CrudRepository<IexQuote, String> {
 
   @Autowired
   public MarketDataDao() {
-    HttpClientConnectionManager httpClientConnectionManager = new BasicHttpClientConnectionManager();
+    PoolingHttpClientConnectionManager cm = new PoolingHttpClientConnectionManager();
+    cm.setMaxTotal(50);
+    cm.setDefaultMaxPerRoute(50);
+
     MarketDataConfig marketDataConfig = new MarketDataConfig();
     marketDataConfig.setHost("https://cloud.iexapis.com/stable");
     marketDataConfig.setToken(System.getenv("token"));
-    this.httpClientConnectionManager = httpClientConnectionManager;
+    this.httpClientConnectionManager = cm;
     this.marketDataConfig = marketDataConfig;
   }
 

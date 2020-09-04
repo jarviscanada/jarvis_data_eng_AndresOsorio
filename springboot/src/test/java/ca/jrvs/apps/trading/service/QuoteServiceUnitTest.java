@@ -22,6 +22,7 @@ public class QuoteServiceUnitTest {
 
   @Mock
   MarketDataDao marketDataDao;
+
   QuoteDao quoteDao;
 
   @InjectMocks
