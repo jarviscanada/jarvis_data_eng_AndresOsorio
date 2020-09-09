@@ -53,7 +53,11 @@ public class SecurityOrderDao extends JdbcCrudDao<SecurityOrder> {
 
   @Override
   public int updateOne(SecurityOrder entity) {
-    throw new UnsupportedOperationException("Not implemented");
+    String update_sql =
+        "UPDATE " + getTableName() + " " +
+            "SET status=? " +
+            "WHERE " + getColumnName() + "=?";
+    return jdbcTemplate.update(update_sql, entity.getStatus(), entity.getId());
   }
 
   @Override
@@ -64,6 +68,11 @@ public class SecurityOrderDao extends JdbcCrudDao<SecurityOrder> {
   @Override
   public void deleteAll(Iterable<? extends SecurityOrder> entities) {
     throw new UnsupportedOperationException("Not implemented");
+  }
+
+  public void deleteAllByAccountId(Integer accountId) {
+    String query = "DELETE FROM " + getTableName() + " WHERE account_id = ?";
+    getJdbcTemplate().update(query, accountId);
   }
 
 }
