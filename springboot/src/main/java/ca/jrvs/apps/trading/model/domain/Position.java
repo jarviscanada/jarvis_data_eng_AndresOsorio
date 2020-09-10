@@ -18,12 +18,16 @@ public class Position implements Entity<Integer> {
     this.accountId = accountId;
   }
 
-  public Integer getAccountId() {
-    return accountId;
+  public Integer getAccountId() { return getId(); }
+
+  public void setAccountId(Integer accountId) { setId(accountId); }
+
+  public Integer getPosition() {
+    return position;
   }
 
-  public void setAccountId(Integer accountId) {
-    this.accountId = accountId;
+  public void setPosition(Integer position) {
+    this.position = position;
   }
 
   public String getTicker() {

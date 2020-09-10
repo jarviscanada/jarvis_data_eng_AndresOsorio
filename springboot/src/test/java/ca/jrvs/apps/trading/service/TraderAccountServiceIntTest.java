@@ -12,7 +12,7 @@ import ca.jrvs.apps.trading.model.domain.Quote;
 import ca.jrvs.apps.trading.model.domain.SecurityOrder;
 import ca.jrvs.apps.trading.model.domain.SecurityOrder.Status;
 import ca.jrvs.apps.trading.model.domain.Trader;
-import ca.jrvs.apps.trading.model.domain.TraderAccountView;
+import ca.jrvs.apps.trading.model.view.TraderAccountView;
 import java.sql.Date;
 import java.util.Arrays;
 import org.junit.After;
