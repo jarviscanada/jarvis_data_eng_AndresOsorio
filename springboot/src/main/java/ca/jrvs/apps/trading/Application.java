@@ -17,9 +17,6 @@ public class Application implements CommandLineRunner {
 
   private Logger logger = LoggerFactory.getLogger(Application.class);
 
-//  @Value("${app.init.dailyList}")
-//  private String[] intDailyList;
-
   @Override
   public void run(String... args) throws Exception {
   }
