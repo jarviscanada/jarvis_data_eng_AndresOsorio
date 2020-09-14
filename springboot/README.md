@@ -3,12 +3,12 @@
 * [Introduction](#Introduction)
 * [Quick Start](#Quick-Start)
 * [Architecture](#Architecture)
-* [REST API Usage](#REST API Usage)
-* [Docker Deployment](#Docker Deployment)
+* [REST API Usage](#REST-API-Usage)
+* [Docker Deployment](#Docker-Deployment)
 * [Improvements](#Improvements)
 
 ## Introduction
-- This program is an online stock trading simulation REST API; it retrieves stock market information
+- This app is an online stock trading simulation RESTful API; it retrieves stock market information
     and persists it into a databse; this information can then be used to CRUD quote, trader and order
     data from and to the databse. This API can be consumed by front-end and mobile developers, as
     well as traders.
@@ -80,7 +80,7 @@
 ### Swagger
 Swagger is a set of open-source tools built around the OpenAPI Specification that can help you design, build, document and consume REST APIs.
 Swagger is then a perfect fit for this project because it enables developers to automatically generate a UI and an API JSON file
-for this RESTful API app; the UI makes it easy for users to consume the API (lists all controllers with their end-points and corresponding documentation) and the API JSON file
+for this RESTful API app; the UI makes it easy for users to consume the API (lists all controllers with their end-points and corresponding documentation and functionality) and the API JSON file
 (describes the structure of the API) makes it easy for developers to test the API on HTTP clients (e.g. postman).
 ### Quote Controller
 - This controller handles HTTP requests that CRUD stock quotes to and from IEX Cloud and the PSQL instance;
