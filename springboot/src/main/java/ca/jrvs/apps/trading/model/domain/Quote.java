@@ -10,13 +10,21 @@ public class Quote implements Entity<String> {
   private Integer askSize;
 
   @Override
-  public String getTicker() {
+  public String getId() {
     return ticker;
   }
 
   @Override
-  public void setTicker(String ticker) {
+  public void setId(String ticker) {
     this.ticker = ticker;
+  }
+
+  public String getTicker() {
+    return getId();
+  }
+
+  public void setTicker(String ticker) {
+    setId(ticker);
   }
 
   public Double getLastPrice() {
