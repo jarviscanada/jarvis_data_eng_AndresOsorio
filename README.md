@@ -24,7 +24,12 @@ I am responsible, reliable, organized, disciplined, hard-working, fast-learning 
     
   - **Twitter CLI App:** Posts/shows/deletes Twitter posts via the Twitter REST API - designed with the well-known MVC (minus V) architecture.
     
-- **[SpringBoot App](./springboot):** In-progress
+- **[SpringBoot App](./springboot):** Developed and online stock trading simulation RESTful API; it retrieves stock market data from IEX Cloud
+    and persists it into a PSQL instance; this data can then be used to CRUD quote, trader and order data from and to the databse.
+    This API can be consumed by front-end and mobile developers, as well as traders. The application is implemented
+    as a microservice using SpringBoot (to manage dependencies), PSQL (to persist and CRUD data using DAO) 
+    and IEX market data (as the stock market data source); it also falls under the MVC and 3-tier architecture - it has a client tier 
+    (HTTP clients to consume API), an application tier (SpringBoot Java program which processes data), and a database tier (where data is persisted).
 
 - **[Cloud & DevOps](./cloud_devops):** Not started
 
