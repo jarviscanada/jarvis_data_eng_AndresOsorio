@@ -64,7 +64,7 @@
    ![Swagegr](assets/swagger.png)
 
 ## Architecture
-![Diagram](assets/architecture.jpg)
+![Diagram](assets/architecture.png)
 - **Controller layer:** takes HTTP requests and calls the service layer with appropriate input (handles HTTP requests using Tomcat);
       it also intercepts exceptions thrown by the app (in lower layers) and maps them to logical
       HTTP status codes
@@ -120,7 +120,7 @@ for this RESTful API app; the UI makes it easy for users to consume the API (lis
   - **GET `/health`:** shows whether the app is working normally
 
 ## Docker Deployment
-  ![Docker](assets/docker.jpg)
+  ![Docker](assets/docker.png)
   - **Dockerfiles:**
     ```bash
     ##### PSQL Dockerfile ##### 
