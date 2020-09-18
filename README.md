@@ -6,7 +6,7 @@ Recent Computer Science graduate with a background in Behaviour Analysis; I have
 
 **Proficient:** Java, OOP, Linux/Bash, RDBMS/SQL, Agile/Scrum, Git/GitHub, Maven
 
-**Competent:** Docker, SpringBoot, REST APIs, Mockito, C, Go, HTML, CSS, JavaScript/Node/Vue, Android Development
+**Competent:** Docker, SpringBoot, REST APIs, Mockito, C, Go, HTML, CSS, JavaScript, Android Development
 
 **Familiar:** Blockchain, Operating Systems, AI/ML, CyberSecurity, Serverless Computing
 
@@ -33,7 +33,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_AndresOsor
 
 
 ## Highlighted Projects
-**Language Analyzer** [[GitHub](https://github.com/OneHoax/language_analyze)]: Designed and implemented 1) a small Java-like programming language and 2) its two associated functionalities: Java-like code generation and type checking. The project was developed on the Eiffel Testing Framework (ETF) - Eiffel is an object-oriented and contract-based language. Implemented the project with the Visitor Design Pattern because it involves a language structure (classes, attrs, methods, etc.) that is meant to be closed for modification and language operations (code generation and type-checking) which are open for modification - this fulfills the open-close principle which is a requirement to apply the visitor pattern.
+**Language Analyzer** [[GitHub](https://github.com/OneHoax/language_analyzer)]: Designed and implemented 1) a small Java-like programming language and 2) its two associated functionalities: Java-like code generation and type checking. The project was developed on the Eiffel Testing Framework (ETF) - Eiffel is an object-oriented and contract-based language. Implemented the project with the Visitor Design Pattern because it involves a language structure (classes, attrs, methods, etc.) that is meant to be closed for modification and language operations (code generation and type-checking) which are open for modification - this fulfills the open-close principle which is a requirement to apply the visitor pattern.
 
 **Gym Platform** [[GitHub](https://github.com/OneHoax/gym_platform)]: Developed a fully responsive Single-Page-Webapp that works as a platform to deliver instructional content on physical training and nutrition; it uses vue.js + materialize for the front end and node.js + firebase for the back end (authorization and deployment). It supports registering and logging-in/out.
 

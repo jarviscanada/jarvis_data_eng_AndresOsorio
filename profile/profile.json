@@ -26,7 +26,7 @@
   "highlighted_projects": [
     {
       "description": "Designed and implemented 1) a small Java-like programming language and 2) its two associated functionalities: Java-like code generation and type checking. The project was developed on the Eiffel Testing Framework (ETF) - Eiffel is an object-oriented and contract-based language. Implemented the project with the Visitor Design Pattern because it involves a language structure (classes, attrs, methods, etc.) that is meant to be closed for modification and language operations (code generation and type-checking) which are open for modification - this fulfills the open-close principle which is a requirement to apply the visitor pattern.",
-      "git_url": "https://github.com/OneHoax/language_analyze",
+      "git_url": "https://github.com/OneHoax/language_analyzer",
       "name": "Language Analyzer"
     },
     {
@@ -111,7 +111,7 @@
       "Go",
       "HTML",
       "CSS",
-      "JavaScript/Node/Vue",
+      "JavaScript",
       "Android Development"
     ],
     "familiar": [
