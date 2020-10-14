@@ -8,7 +8,7 @@
 LGS uses a web-app as its online shop; this web-app uses an Azure SQL 
 Server as its database for daily OLTP operations; because this project
 is a PoC, I am not allowed to work with this database directly; instead, 
-the LGS IT team dumped the transaction data between 2009-12 and 2011-12  
+the LGS IT team dumped the transaction data between 2009-12 and 2011-12 
 into an SQL file, which I then loaded into a data warehouse (PostgreSQL 
 instance) and used it to perform OLAP operations using Python technologies.
 
@@ -27,12 +27,10 @@ provided by LGS to answer the following business questions:
 
 RFM stands for Recency, Frequency, and Monetary; RFM Segmentation 
 allows marketers to gain an extensive understanding of their customers by 
-analyzing those 3 quantifiable factors; it is a way to analyze customer value.
-  
-
+analyzing those 3 quantifiable factors; it is a way to analyze customer value.  
 The table below depicts the RFM Segmentation for the LGS retail data provided:
 
-![RFM](./assets/rfm.png)
+<img src=./assets/rfm.png width="100%">
 
 To help LGS drive their revenue back up, I have paid special attention to 3
 segments:  
