@@ -56,6 +56,11 @@
       "name": "SpringBoot App"
     },
     {
+      "description": "Implemented a data analysis project to help a retail organization drive their revenue back up; used a PostgreSQL instance as a data warehouse and Python Pandas/Jupyter to perform OLAP operations on the data and answer necessary business questions.",
+      "git_url": "/python_data_wrangling",
+      "name": "Data Wrangling"
+    },
+    {
       "description": "In Progress",
       "git_url": "/hadoop",
       "name": "Hadoop"
@@ -75,8 +80,7 @@
   "others": [
     {
       "bullets": [
-        "Soccer Player",
-        "Indoor Rock Climbing"
+        "Soccer Player"
       ],
       "title": "Activities/Hobbies"
     }
@@ -103,10 +107,10 @@
   ],
   "skills": {
     "competent": [
+      "Eiffel",
       "Docker",
       "SpringBoot",
       "REST APIs",
-      "Mockito",
       "C",
       "Go",
       "HTML",
@@ -115,20 +119,20 @@
       "Android Development"
     ],
     "familiar": [
+      "Pandas/Jupyter/Data Analysis",
       "Blockchain",
       "Operating Systems",
       "AI/ML",
-      "CyberSecurity",
-      "Serverless Computing"
+      "CyberSecurity"
     ],
     "proficient": [
-      "Java",
       "OOP",
+      "Java",
+      "Maven",
       "Linux/Bash",
-      "RDBMS/SQL",
-      "Agile/Scrum",
       "Git/GitHub",
-      "Maven"
+      "RDBMS/SQL",
+      "Agile/Scrum"
     ]
   },
   "summary": "Recent Computer Science graduate with a background in Behaviour Analysis; I have experience in a wide variety of fields that have provided me with the right professional and personal skills needed to succeed in the software industry. The amount of data being created every year is growing at an exponential rate and will continue to do so; Data Engineering resonates with me because there is a need for qualified individuals to make sense of it all and I love both engineering and the patterns that arise from data. I am responsible, reliable, organized, disciplined, hard-working, fast-learning, and goal-oriented."

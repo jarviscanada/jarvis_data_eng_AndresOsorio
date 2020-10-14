@@ -4,11 +4,11 @@ Recent Computer Science graduate with a background in Behaviour Analysis; I have
 
 ## Skills
 
-**Proficient:** Java, OOP, Linux/Bash, RDBMS/SQL, Agile/Scrum, Git/GitHub, Maven
+**Proficient:** OOP, Java, Maven, Linux/Bash, Git/GitHub, RDBMS/SQL, Agile/Scrum
 
-**Competent:** Docker, SpringBoot, REST APIs, Mockito, C, Go, HTML, CSS, JavaScript, Android Development
+**Competent:** Eiffel, Docker, SpringBoot, REST APIs, C, Go, HTML, CSS, JavaScript, Android Development
 
-**Familiar:** Blockchain, Operating Systems, AI/ML, CyberSecurity, Serverless Computing
+**Familiar:** Pandas/Jupyter/Data Analysis, Blockchain, Operating Systems, AI/ML, CyberSecurity
 
 ## Jarvis Projects
 
@@ -24,6 +24,8 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_AndresOsor
   - Twitter App: Posts/shows/deletes Twitter posts via the Twitter REST API - designed with the well-known MVC (minus V) architecture.
 
 **SpringBoot App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/springboot)]: Developed a RESTful API that simulates an online stock trading system; it retrieves stock market data from IEX Cloud and persists it into a PSQL instance; this data can then be used to CRUD quote, trader, and order data against the database. This API can be consumed by front-end and mobile developers, as well as traders. The application is implemented as a microservice using SpringBoot (to manage dependencies and provide the web-server), PSQL (to persist and CRUD data using DAO), and IEX Cloud (as the stock market data source); it also falls under the MVC and 3-tier architecture - it has a client tier (HTTP clients to consume API), an application tier (SpringBoot Java program which processes data), and a data tier (where data is persisted).
+
+**Data Wrangling** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/python_data_wrangling)]: Implemented a data analysis project to help a retail organization drive their revenue back up; used a PostgreSQL instance as a data warehouse and Python Pandas/Jupyter to perform OLAP operations on the data and answer necessary business questions.
 
 **Hadoop** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/hadoop)]: In Progress
 
@@ -60,4 +62,3 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_AndresOsor
 
 ## Miscellaneous
 - Soccer Player
-- Indoor Rock Climbing

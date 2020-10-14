@@ -12,19 +12,19 @@ summary: "Recent Computer Science graduate with a background in Behaviour Analys
 skills:
   # At least 5 skills
   proficient:
-    - Java
     - OOP
+    - Java
+    - Maven
     - Linux/Bash
+    - Git/GitHub
     - RDBMS/SQL
     - Agile/Scrum
-    - Git/GitHub
-    - Maven
   # At least 5 skills
   competent:
+    - Eiffel
     - Docker
     - SpringBoot
     - REST APIs
-    - Mockito
     - C
     - Go
     - HTML
@@ -33,11 +33,11 @@ skills:
     - Android Development
   # At least 5 skills
   familiar:
+    - Pandas/Jupyter/Data Analysis
     - Blockchain
     - Operating Systems
     - AI/ML
     - CyberSecurity
-    - Serverless Computing
 
 # List of Jarvis projects
 jarvis_projects:
@@ -55,6 +55,9 @@ jarvis_projects:
   - name: "SpringBoot App"
     git_url: "/springboot"
     description: "Developed a RESTful API that simulates an online stock trading system; it retrieves stock market data from IEX Cloud and persists it into a PSQL instance; this data can then be used to CRUD quote, trader, and order data against the database. This API can be consumed by front-end and mobile developers, as well as traders. The application is implemented as a microservice using SpringBoot (to manage dependencies and provide the web-server), PSQL (to persist and CRUD data using DAO), and IEX Cloud (as the stock market data source); it also falls under the MVC and 3-tier architecture - it has a client tier (HTTP clients to consume API), an application tier (SpringBoot Java program which processes data), and a data tier (where data is persisted)."
+  - name: "Data Wrangling"
+    git_url: "/python_data_wrangling"
+    description: "Implemented a data analysis project to help a retail organization drive their revenue back up; used a PostgreSQL instance as a data warehouse and Python Pandas/Jupyter to perform OLAP operations on the data and answer necessary business questions."
   - name: "Hadoop"
     git_url: "/hadoop"
     description: "In Progress"
@@ -130,4 +133,3 @@ others:
   - title: "Activities/Hobbies"
     bullets:
       - "Soccer Player"
-      - "Indoor Rock Climbing"
