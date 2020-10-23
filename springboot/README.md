@@ -60,7 +60,7 @@
     docker pull onehoax/trading-psql
     docker pull onehoax/trading-app
     ```
-- **SwaggerUI:**
+- **SwaggerUI:** http://localhost:5000/swagger-ui.html
    ![Swagegr](assets/swagger.png)
 
 ## Architecture
