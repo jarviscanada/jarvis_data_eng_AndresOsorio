@@ -1,14 +1,14 @@
 # Andres Osorio . Jarvis Consulting
 
-Recent Computer Science graduate with a background in Behaviour Analysis; I have experience in a wide variety of fields that have provided me with the right professional and personal skills needed to succeed in the software industry. The amount of data being created every year is growing at an exponential rate and will continue to do so; Data Engineering resonates with me because there is a need for qualified individuals to make sense of it all and I love both engineering and the patterns that arise from data. I am responsible, reliable, organized, disciplined, hard-working, fast-learning, and goal-oriented.
+Recent Computer Science graduate with a background in Behavior Analysis; I have experience in a wide variety of fields that have provided me with the right professional and personal skills needed to succeed in the software industry. The amount of data being created every year is growing at an exponential rate and will continue to do so; Data Engineering resonates with me because there is a need for qualified individuals to make sense of it all and I love both engineering and the patterns that arise from data. I am responsible, reliable, organized, disciplined, hard-working, fast-learning, and goal-oriented.
 
 ## Skills
 
 **Proficient:** OOP, Java, Maven, Linux/Bash, Git/GitHub, RDBMS/SQL, Agile/Scrum
 
-**Competent:** Eiffel, Docker, SpringBoot, REST APIs, C, Go, HTML, CSS, JavaScript, Android Development
+**Competent:** Hadoop, Eiffel, Docker, SpringBoot, REST APIs, C, Go, HTML/CSS/JavaScript, Android Development
 
-**Familiar:** Pandas/Jupyter/Data Analysis, Blockchain, Operating Systems, AI/ML, CyberSecurity
+**Familiar:** Notebooks (Jupyter, Zeppelin), Python (NumPy, Pandas), Blockchain, Operating Systems, AI/ML, CyberSecurity
 
 ## Jarvis Projects
 
@@ -27,9 +27,9 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_AndresOsor
 
 **Data Wrangling** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/python_data_wrangling)]: Implemented a data analysis project to help a retail organization drive their revenue back up; specifically, the analysis segmented customers (using RFM Segmentation) into important categories to help the company develop targeted marketing strategies. Used a PostgreSQL instance as a data warehouse and Python Pandas/Jupyter to perform OLAP operations on the data and answer necessary business questions.
 
-**Hadoop** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/hadoop)]: In Progress
+**Hadoop** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/hadoop)]: Evaluated Hadoop core components (HDFS, YARN, and MapReduce), deployed a 3-node Hadoop cluster using Google Cloud Platform Dataproc, and answer several business questions using Hive and Zeppelin; leveraged the distributed storage and processing capabilities of the Hadoop ecosystem to analyze the 2016 World Development Indicators dataset and solve the required business problems.
 
-**Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/spark)]: Not Started
+**Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/spark)]: In progress
 
 **Cloud/DevOps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/cloud_devops)]: Not Started
 

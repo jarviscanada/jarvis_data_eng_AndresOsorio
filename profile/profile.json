@@ -61,12 +61,12 @@
       "name": "Data Wrangling"
     },
     {
-      "description": "In Progress",
+      "description": "Evaluated Hadoop core components (HDFS, YARN, and MapReduce), deployed a 3-node Hadoop cluster using Google Cloud Platform Dataproc, and answer several business questions using Hive and Zeppelin; leveraged the distributed storage and processing capabilities of the Hadoop ecosystem to analyze the 2016 World Development Indicators dataset and solve the required business problems.",
       "git_url": "/hadoop",
       "name": "Hadoop"
     },
     {
-      "description": "Not Started",
+      "description": "In progress",
       "git_url": "/spark",
       "name": "Spark"
     },
@@ -107,19 +107,19 @@
   ],
   "skills": {
     "competent": [
+      "Hadoop",
       "Eiffel",
       "Docker",
       "SpringBoot",
       "REST APIs",
       "C",
       "Go",
-      "HTML",
-      "CSS",
-      "JavaScript",
+      "HTML/CSS/JavaScript",
       "Android Development"
     ],
     "familiar": [
-      "Pandas/Jupyter/Data Analysis",
+      "Notebooks (Jupyter, Zeppelin)",
+      "Python (NumPy, Pandas)",
       "Blockchain",
       "Operating Systems",
       "AI/ML",
@@ -135,5 +135,5 @@
       "Agile/Scrum"
     ]
   },
-  "summary": "Recent Computer Science graduate with a background in Behaviour Analysis; I have experience in a wide variety of fields that have provided me with the right professional and personal skills needed to succeed in the software industry. The amount of data being created every year is growing at an exponential rate and will continue to do so; Data Engineering resonates with me because there is a need for qualified individuals to make sense of it all and I love both engineering and the patterns that arise from data. I am responsible, reliable, organized, disciplined, hard-working, fast-learning, and goal-oriented."
+  "summary": "Recent Computer Science graduate with a background in Behavior Analysis; I have experience in a wide variety of fields that have provided me with the right professional and personal skills needed to succeed in the software industry. The amount of data being created every year is growing at an exponential rate and will continue to do so; Data Engineering resonates with me because there is a need for qualified individuals to make sense of it all and I love both engineering and the patterns that arise from data. I am responsible, reliable, organized, disciplined, hard-working, fast-learning, and goal-oriented."
 }
