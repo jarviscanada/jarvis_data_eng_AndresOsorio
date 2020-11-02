@@ -7,24 +7,25 @@ skills:
   proficient:
     - OOP
     - Java
+    - SpringBoot
     - Maven
     - Linux/Bash
+    - Docker
     - Git/GitHub
     - RDBMS/SQL
     - Agile/Scrum
   competent:
-    - Hadoop
-    - Eiffel
-    - Docker
-    - SpringBoot
+    - Big Data (Hadoop)
+    - Notebooks (Jupyter, Zeppelin)
+    - Python (NumPy, Pandas)
     - REST APIs
+    - Eiffel
     - C
     - Go
     - HTML/CSS/JavaScript
     - Android Development
   familiar:
-    - Notebooks (Jupyter, Zeppelin)
-    - Python (NumPy, Pandas)
+    - Functional Programming
     - Blockchain
     - Operating Systems
     - AI/ML
@@ -48,7 +49,7 @@ jarvis_projects:
     description: "Implemented a data analysis project to help a retail organization drive their revenue back up; specifically, the analysis segmented customers (using RFM Segmentation) into important categories to help the company develop targeted marketing strategies. Used a PostgreSQL instance as a data warehouse and Python Pandas/Jupyter to perform OLAP operations on the data and answer necessary business questions."
   - name: "Hadoop"
     git_url: "/hadoop"
-    description: "Evaluated Hadoop core components (HDFS, YARN, and MapReduce), deployed a 3-node Hadoop cluster using Google Cloud Platform Dataproc, and answer several business questions using Hive and Zeppelin; leveraged the distributed storage and processing capabilities of the Hadoop ecosystem to analyze the 2016 World Development Indicators dataset and solve the required business problems."
+    description: "Evaluated Hadoop core components (HDFS, YARN, and MapReduce), deployed a 3-node Hadoop cluster using Google Cloud Platform Dataproc, and performed data processing/analytics using Hive and Zeppelin; leveraged the distributed storage and processing capabilities of the Hadoop ecosystem to examine the 2016 World Development Indicators dataset, optamize it, and ultimately do analytical operations on it."
   - name: "Spark"
     git_url: "/spark"
     description: "In progress"

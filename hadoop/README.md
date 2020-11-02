@@ -15,9 +15,9 @@ as the Data Engineer, I was responsible for:
 
 I was tasked with examining the 2016 World Development Indicators dataset (WDI is
 the World Bank’s premier compilation of international statistics on global
-development) and answering several business questions using the Hadoop ecosystem;
-specifically, I deployed a 3-node Hadoop cluster on GCP and solved business
-problems by leveraging HDFS, YARN, Hive, and Zeppelin functionality.
+development) and doing data processing/analysis using the Hadoop ecosystem;
+specifically, I deployed a 3-node Hadoop cluster on GCP and performed data optamizations
+for data analytics operations by leveraging HDFS, YARN, Hive, and Zeppelin functionality.
 
 ## The Hadoop Ecosystem
  Apache Hadoop is a collection of open-source frameworks that are used to efficiently
@@ -72,8 +72,9 @@ the master node.
 
 ## Hive Project
 The 2016 World Development Indicators dataset was duplicated onto HDFS from GCP Storage;
-Hive tables were created from both sources (GCP and HDFS) and were used to analyze
-the data, solve several business problems, and document findings through the Markdown,
+Hive tables were created from both sources (GCP and HDFS) and were used to examine
+the data, optamize it (SerDes, Partitioning, Columnar-Formats), perform data analytics operations
+and, document findings through the Markdown,
 HiveQL, and Bash interpreters available on the Zeppelin Notebook. Hive's default
 execution engine used to be MapReduce but was replaced recently by Apache Tez;
 Tez improves the MapReduce paradigm by dramatically improving its speed while

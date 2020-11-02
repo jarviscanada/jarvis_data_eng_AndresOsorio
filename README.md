@@ -4,11 +4,11 @@ Recent Computer Science graduate with a background in Behavior Analysis; I have 
 
 ## Skills
 
-**Proficient:** OOP, Java, Maven, Linux/Bash, Git/GitHub, RDBMS/SQL, Agile/Scrum
+**Proficient:** OOP, Java, SpringBoot, Maven, Linux/Bash, Docker, Git/GitHub, RDBMS/SQL, Agile/Scrum
 
-**Competent:** Hadoop, Eiffel, Docker, SpringBoot, REST APIs, C, Go, HTML/CSS/JavaScript, Android Development
+**Competent:** Big Data (Hadoop), Notebooks (Jupyter, Zeppelin), Python (NumPy, Pandas), REST APIs, Eiffel, C, Go, HTML/CSS/JavaScript, Android Development
 
-**Familiar:** Notebooks (Jupyter, Zeppelin), Python (NumPy, Pandas), Blockchain, Operating Systems, AI/ML, CyberSecurity
+**Familiar:** Functional Programming, Blockchain, Operating Systems, AI/ML, CyberSecurity
 
 ## Jarvis Projects
 
@@ -27,7 +27,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_AndresOsor
 
 **Data Wrangling** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/python_data_wrangling)]: Implemented a data analysis project to help a retail organization drive their revenue back up; specifically, the analysis segmented customers (using RFM Segmentation) into important categories to help the company develop targeted marketing strategies. Used a PostgreSQL instance as a data warehouse and Python Pandas/Jupyter to perform OLAP operations on the data and answer necessary business questions.
 
-**Hadoop** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/hadoop)]: Evaluated Hadoop core components (HDFS, YARN, and MapReduce), deployed a 3-node Hadoop cluster using Google Cloud Platform Dataproc, and answer several business questions using Hive and Zeppelin; leveraged the distributed storage and processing capabilities of the Hadoop ecosystem to analyze the 2016 World Development Indicators dataset and solve the required business problems.
+**Hadoop** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/hadoop)]: Evaluated Hadoop core components (HDFS, YARN, and MapReduce), deployed a 3-node Hadoop cluster using Google Cloud Platform Dataproc, and performed data processing/analytics using Hive and Zeppelin; leveraged the distributed storage and processing capabilities of the Hadoop ecosystem to examine the 2016 World Development Indicators dataset, optamize it, and ultimately do analytical operations on it.
 
 **Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/spark)]: In progress
 
