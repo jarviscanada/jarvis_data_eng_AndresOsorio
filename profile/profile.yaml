@@ -1,30 +1,31 @@
 name: "Andres Osorio"
 github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio
 
-summary: "Recent Computer Science graduate with a background in Behaviour Analysis; I have experience in a wide variety of fields that have provided me with the right professional and personal skills needed to succeed in the software industry. The amount of data being created every year is growing at an exponential rate and will continue to do so; Data Engineering resonates with me because there is a need for qualified individuals to make sense of it all and I love both engineering and the patterns that arise from data. I am responsible, reliable, organized, disciplined, hard-working, fast-learning, and goal-oriented."
+summary: "Recent Computer Science graduate with a background in Behavior Analysis; I have experience in a wide variety of fields that have provided me with the right professional and personal skills needed to succeed in the software industry. The amount of data being created every year is growing at an exponential rate and will continue to do so; Data Engineering resonates with me because there is a need for qualified individuals to make sense of it all and I love both engineering and the patterns that arise from data. I am responsible, reliable, organized, disciplined, hard-working, fast-learning, and goal-oriented."
 
 skills:
   proficient:
     - OOP
     - Java
+    - SpringBoot
     - Maven
     - Linux/Bash
+    - Docker
     - Git/GitHub
     - RDBMS/SQL
     - Agile/Scrum
   competent:
-    - Eiffel
-    - Docker
-    - SpringBoot
+    - Big Data (Hadoop)
+    - Notebooks (Jupyter, Zeppelin)
+    - Python (NumPy, Pandas)
     - REST APIs
+    - Eiffel
     - C
     - Go
-    - HTML
-    - CSS
-    - JavaScript
+    - HTML/CSS/JavaScript
     - Android Development
   familiar:
-    - Pandas/Jupyter/Data Analysis
+    - Functional Programming
     - Blockchain
     - Operating Systems
     - AI/ML
@@ -48,10 +49,10 @@ jarvis_projects:
     description: "Implemented a data analysis project to help a retail organization drive their revenue back up; specifically, the analysis segmented customers (using RFM Segmentation) into important categories to help the company develop targeted marketing strategies. Used a PostgreSQL instance as a data warehouse and Python Pandas/Jupyter to perform OLAP operations on the data and answer necessary business questions."
   - name: "Hadoop"
     git_url: "/hadoop"
-    description: "In Progress"
+    description: "Evaluated Hadoop core components (HDFS, YARN, and MapReduce), deployed a 3-node Hadoop cluster using Google Cloud Platform Dataproc, and performed data processing/analytics using Hive and Zeppelin; leveraged the distributed storage and processing capabilities of the Hadoop ecosystem to examine the 2016 World Development Indicators dataset, optimize it, and ultimately do analytical operations on it."
   - name: "Spark"
     git_url: "/spark"
-    description: "Not Started"
+    description: "In progress"
   - name: "Cloud/DevOps"
     git_url: "/cloud_devops"
     description: "Not Started"
