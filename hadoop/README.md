@@ -11,7 +11,7 @@ The Data Analytics team recently switched to Apache Hadoop to process big data;
 as the Data Engineer, I was responsible for:
   - Evaluating core Hadoop components (HDFS, YARN, and MapReduce)
   - Provisioning a Hadoop cluster using Google Cloud Platform (GCP)
-  - Solving business questions using Apache Hive and Zeppelin Notebook
+  - Performing data optamizations/analytics using Apache Hive and Zeppelin Notebook
 
 I was tasked with examining the 2016 World Development Indicators dataset (WDI is
 the World Bank’s premier compilation of international statistics on global
@@ -73,8 +73,8 @@ the master node.
 ## Hive Project
 The 2016 World Development Indicators dataset was duplicated onto HDFS from GCP Storage;
 Hive tables were created from both sources (GCP and HDFS) and were used to examine
-the data, optamize it (SerDes, Partitioning, Columnar-Formats), perform data analytics operations
-and, document findings through the Markdown,
+the data, optamize it (SerDes, Partitioning, Columnar-Formats), perform data analytics operations,
+and document findings through the Markdown,
 HiveQL, and Bash interpreters available on the Zeppelin Notebook. Hive's default
 execution engine used to be MapReduce but was replaced recently by Apache Tez;
 Tez improves the MapReduce paradigm by dramatically improving its speed while
