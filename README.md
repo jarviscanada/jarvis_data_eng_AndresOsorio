@@ -6,7 +6,7 @@ Recent Computer Science graduate with a background in Behavior Analysis; I have 
 
 **Proficient:** OOP, Java, SpringBoot, Maven, Linux/Bash, Docker, Git/GitHub, RDBMS/SQL, Agile/Scrum
 
-**Competent:** Big Data (Hadoop), Notebooks (Jupyter, Zeppelin), Python (NumPy, Pandas), REST APIs, Eiffel, C, Go, HTML/CSS/JavaScript, Android Development
+**Competent:** Big Data (Spark, Hadoop), Notebooks (Zeppelin, Databricks, Jupyter), Python (PySpark, NumPy, Pandas), REST APIs, Eiffel, C, Go, HTML/CSS/JavaScript, Android Development
 
 **Familiar:** Functional Programming, Blockchain, Operating Systems, AI/ML, CyberSecurity
 
@@ -29,7 +29,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_AndresOsor
 
 **Hadoop** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/hadoop)]: Evaluated Hadoop core components (HDFS, YARN, and MapReduce), deployed a 3-node Hadoop cluster using Google Cloud Platform Dataproc, and performed data processing/analytics using Hive and Zeppelin; leveraged the distributed storage and processing capabilities of the Hadoop ecosystem to examine the 2016 World Development Indicators dataset, optimize it, and ultimately do analytical operations on it.
 
-**Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/spark)]: In progress
+**Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/spark)]: Evaluated Spark's functionality and performance with Zeppelin on Hadoop and re-implemented the [Data Analytics project](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/python_data_wrangling) using Azure Databricks and Spark Structured APIs; performed parallel data analytics on a cluster against customer transactional data to answer several business questions and identify important customer categories to help the client organization develop targeted marketing strategies.
 
 **Cloud/DevOps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/cloud_devops)]: Not Started
 

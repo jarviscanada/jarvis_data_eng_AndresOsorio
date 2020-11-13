@@ -66,7 +66,7 @@
       "name": "Hadoop"
     },
     {
-      "description": "In progress",
+      "description": "Evaluated Spark's functionality and performance with Zeppelin on Hadoop and re-implemented the [Data Analytics project](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/python_data_wrangling) using Azure Databricks and Spark Structured APIs; performed parallel data analytics on a cluster against customer transactional data to answer several business questions and identify important customer categories to help the client organization develop targeted marketing strategies.",
       "git_url": "/spark",
       "name": "Spark"
     },
@@ -107,9 +107,9 @@
   ],
   "skills": {
     "competent": [
-      "Big Data (Hadoop)",
-      "Notebooks (Jupyter, Zeppelin)",
-      "Python (NumPy, Pandas)",
+      "Big Data (Spark, Hadoop)",
+      "Notebooks (Zeppelin, Databricks, Jupyter)",
+      "Python (PySpark, NumPy, Pandas)",
       "REST APIs",
       "Eiffel",
       "C",
