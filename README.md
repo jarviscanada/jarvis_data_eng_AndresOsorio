@@ -1,12 +1,12 @@
 # Andres Osorio . Jarvis Consulting
 
-Recent Computer Science graduate with a background in Behavior Analysis; I have experience in a wide variety of fields that have provided me with the right professional and personal skills needed to succeed in the software industry. The amount of data being created every year is growing at an exponential rate and will continue to do so; Data Engineering resonates with me because there is a need for qualified individuals to make sense of it all and I love both engineering and the patterns that arise from data. I am responsible, reliable, organized, disciplined, hard-working, fast-learning, and goal-oriented.
+Recent Computer Science graduate with a background in Behavior Analysis; I have experience in a wide variety of fields that have provided me with the right professional and personal skills needed to succeed in the software industry. The amount of data being created every year is growing at an exponential rate and will continue to do so; Data Engineering resonates with me because there is a need for qualified individuals to make sense of it all and I love both engineering and the patterns that arise from data. I am responsible, reliable, organized, disciplined, hard-working, goal-oriented, and always eager to learn.
 
 ## Skills
 
-**Proficient:** OOP, Java, SpringBoot, Maven, Linux/Bash, Docker, Git/GitHub, RDBMS/SQL, Agile/Scrum
+**Proficient:** OOP, Java, Linux/Bash, RDBMS/SQL, Spark, Hadoop, SpringBoot, Maven, Docker, Git/GitHub, Agile/Scrum
 
-**Competent:** Big Data (Hadoop), Notebooks (Jupyter, Zeppelin), Python (NumPy, Pandas), REST APIs, Eiffel, C, Go, HTML/CSS/JavaScript, Android Development
+**Competent:** Python/PySpark/NumPy/Pandas, Zeppelin/Databricks/Jupyter, REST APIs, Eiffel, C, Go, HTML/CSS/JavaScript, Android Development
 
 **Familiar:** Functional Programming, Blockchain, Operating Systems, AI/ML, CyberSecurity
 
@@ -25,11 +25,11 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_AndresOsor
 
 **SpringBoot App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/springboot)]: Developed a RESTful API using SpringBoot that simulates an online stock trading system; it retrieves stock market data from IEX Cloud and persists it into a PostgreSQL instance; this data can then be used to CRUD quote, trader, and order data against the database. This API can be consumed by front-end and mobile developers, as well as traders. The application is implemented as a microservice using SpringBoot (to manage dependencies and provide the web-server), PostgreSQL (to persist and CRUD data using DAO), and IEX Cloud (as the stock market data source); it also falls under the MVC and 3-tier architecture - it has a client tier (HTTP clients to consume API), an application tier (SpringBoot Java program which processes data), and a data tier (where data is persisted).
 
-**Data Wrangling** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/python_data_wrangling)]: Implemented a data analysis project to help a retail organization drive their revenue back up; specifically, the analysis segmented customers (using RFM Segmentation) into important categories to help the company develop targeted marketing strategies. Used a PostgreSQL instance as a data warehouse and Python Pandas/Jupyter to perform OLAP operations on the data and answer necessary business questions.
+**Data Analytics** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/python_data_wrangling)]: Implemented a data analysis project to help a retail organization drive their revenue back up; specifically, the analysis segmented customers (using RFM Segmentation) into important categories to help the company develop targeted marketing strategies. Used a PostgreSQL instance as a data warehouse and Python Pandas/Jupyter to perform OLAP operations on the data and answer necessary business questions.
 
 **Hadoop** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/hadoop)]: Evaluated Hadoop core components (HDFS, YARN, and MapReduce), deployed a 3-node Hadoop cluster using Google Cloud Platform Dataproc, and performed data processing/analytics using Hive and Zeppelin; leveraged the distributed storage and processing capabilities of the Hadoop ecosystem to examine the 2016 World Development Indicators dataset, optimize it, and ultimately do analytical operations on it.
 
-**Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/spark)]: In progress
+**Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/spark)]: Evaluated Spark's functionality and performance with Zeppelin on Hadoop and re-implemented the [Data Analytics project](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/python_data_wrangling) using Azure Databricks and Spark Structured APIs; performed parallel data analytics on a cluster against customer transactional data to answer several business questions and identify important customer categories to help the client organization develop targeted marketing strategies.
 
 **Cloud/DevOps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/cloud_devops)]: Not Started
 
@@ -42,7 +42,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_AndresOsor
 
 ## Professional Experiences
 
-**Software Developer, Jarvis (2020-present)**: Worked in a small scrum team building Data Engineering projects. Developed products successfully through continuous participation in scrum events and agile best practices. Implemented projects using Java, Maven, SpringBoot, Bash, RDBMS/SQL, Git, Hadoop, Spark/Scala, and Docker. Performed both integration and unit testing for each project using JUnit and Mockito. Used a Linux environment (centOS) for development.
+**Data Engineer, Jarvis Consulting Group (2020-present)**: Worked in a small scrum team developing Data Engineering projects. Successfully contributed to all stages of product Software Development Life Cycle through continuous participation in Scrum events and Agile best practices. Implemented projects using Java, Maven, SpringBoot, Bash, RDBMS/SQL, Python, Hadoop, Spark, Docker, Git/GitHub, and cloud services. Performed both integration and unit testing using JUnit and Mockito. Used a Linux environment (centOS) for development.
 
 **Social Worker, Community Living Toronto (2015-2017)**: Worked in the TRE ADD (Treatment, Research, and Education for Autism and Developmental Disabilities) program in a respite house. Provided patients support with their daily activities (Hygiene, feeding, and medication) and led behavioral programming to reduce problem behaviors and reinforce appropriate ones.
 
