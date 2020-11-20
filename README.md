@@ -4,9 +4,9 @@ Recent Computer Science graduate with a background in Behavior Analysis; I have 
 
 ## Skills
 
-**Proficient:** OOP, Java, SpringBoot, Maven, Linux/Bash, Docker, Git/GitHub, RDBMS/SQL, Agile/Scrum
+**Proficient:** OOP, Java, Linux/Bash, RDBMS/SQL, Spark, Hadoop, SpringBoot, Maven, Docker, Git/GitHub, Agile/Scrum
 
-**Competent:** Big Data (Spark, Hadoop), Notebooks (Zeppelin, Databricks, Jupyter), Python (PySpark, NumPy, Pandas), REST APIs, Eiffel, C, Go, HTML/CSS/JavaScript, Android Development
+**Competent:** Python/PySpark/NumPy/Pandas, Zeppelin/Databricks/Jupyter, REST APIs, Eiffel, C, Go, HTML/CSS/JavaScript, Android Development
 
 **Familiar:** Functional Programming, Blockchain, Operating Systems, AI/ML, CyberSecurity
 

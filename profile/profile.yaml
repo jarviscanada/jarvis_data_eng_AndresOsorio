@@ -7,17 +7,18 @@ skills:
   proficient:
     - OOP
     - Java
+    - Linux/Bash
+    - RDBMS/SQL
+    - Spark
+    - Hadoop
     - SpringBoot
     - Maven
-    - Linux/Bash
     - Docker
     - Git/GitHub
-    - RDBMS/SQL
     - Agile/Scrum
   competent:
-    - Big Data (Spark, Hadoop)
-    - Notebooks (Zeppelin, Databricks, Jupyter)
-    - Python (PySpark, NumPy, Pandas)
+    - Python/PySpark/NumPy/Pandas
+    - Zeppelin/Databricks/Jupyter
     - REST APIs
     - Eiffel
     - C
