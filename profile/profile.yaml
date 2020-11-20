@@ -67,10 +67,10 @@ highlighted_projects:
     description: "Developed a fully responsive Single-Page-Webapp that works as a platform to deliver instructional content on physical training and nutrition; it uses vue.js + materialize for the front end and node.js + firebase for the back end (authorization and deployment). It supports registering and logging-in/out."
 
 professional_experience:
-  - title: "Software Developer"
-    company: "Jarvis"
+  - title: "Data Engineer"
+    company: "Jarvis Consulting Group"
     duration: "2020-present"
-    description: "Worked in a small scrum team building Data Engineering projects. Developed products successfully through continuous participation in scrum events and agile best practices. Implemented projects using Java, Maven, SpringBoot, Bash, RDBMS/SQL, Git, Hadoop, Spark/Scala, and Docker. Performed both integration and unit testing for each project using JUnit and Mockito. Used a Linux environment (centOS) for development."
+    description: "Worked in a small scrum team developing Data Engineering projects. Successfully contributed to all stages of product Software Development Life Cycle through continuous participation in Scrum events and Agile best practices. Implemented projects using Java, Maven, SpringBoot, Bash, RDBMS/SQL, Python, Hadoop, Spark, Docker, Git/GitHub, and cloud services. Performed both integration and unit testing using JUnit and Mockito. Used a Linux environment (centOS) for development."
   - title: "Social Worker"
     company: "Community Living Toronto"
     duration: "2015-2017"

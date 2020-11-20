@@ -87,10 +87,10 @@
   ],
   "professional_experience": [
     {
-      "company": "Jarvis",
-      "description": "Worked in a small scrum team building Data Engineering projects. Developed products successfully through continuous participation in scrum events and agile best practices. Implemented projects using Java, Maven, SpringBoot, Bash, RDBMS/SQL, Git, Hadoop, Spark/Scala, and Docker. Performed both integration and unit testing for each project using JUnit and Mockito. Used a Linux environment (centOS) for development.",
+      "company": "Jarvis Consulting Group",
+      "description": "Worked in a small scrum team developing Data Engineering projects. Successfully contributed to all stages of product Software Development Life Cycle through continuous participation in Scrum events and Agile best practices. Implemented projects using Java, Maven, SpringBoot, Bash, RDBMS/SQL, Python, Hadoop, Spark, Docker, Git/GitHub, and cloud services. Performed both integration and unit testing using JUnit and Mockito. Used a Linux environment (centOS) for development.",
       "duration": "2020-present",
-      "title": "Software Developer"
+      "title": "Data Engineer"
     },
     {
       "company": "Community Living Toronto",

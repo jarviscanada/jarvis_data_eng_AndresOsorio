@@ -42,7 +42,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_AndresOsor
 
 ## Professional Experiences
 
-**Software Developer, Jarvis (2020-present)**: Worked in a small scrum team building Data Engineering projects. Developed products successfully through continuous participation in scrum events and agile best practices. Implemented projects using Java, Maven, SpringBoot, Bash, RDBMS/SQL, Git, Hadoop, Spark/Scala, and Docker. Performed both integration and unit testing for each project using JUnit and Mockito. Used a Linux environment (centOS) for development.
+**Data Engineer, Jarvis Consulting Group (2020-present)**: Worked in a small scrum team developing Data Engineering projects. Successfully contributed to all stages of product Software Development Life Cycle through continuous participation in Scrum events and Agile best practices. Implemented projects using Java, Maven, SpringBoot, Bash, RDBMS/SQL, Python, Hadoop, Spark, Docker, Git/GitHub, and cloud services. Performed both integration and unit testing using JUnit and Mockito. Used a Linux environment (centOS) for development.
 
 **Social Worker, Community Living Toronto (2015-2017)**: Worked in the TRE ADD (Treatment, Research, and Education for Autism and Developmental Disabilities) program in a respite house. Provided patients support with their daily activities (Hygiene, feeding, and medication) and led behavioral programming to reduce problem behaviors and reinforce appropriate ones.
 
