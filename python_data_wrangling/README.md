@@ -1,4 +1,4 @@
-# Data Wrangling
+# Data Analytics
 
 ## Introduction
 - London Gift Shop (LGS) is a UK-based online store that sells gifts; it has been operating for more than 10 years but revenue has plateaued recently. LGS wants to use the latest data technologies to evaluate their customers and sales data better in order to develop marketing strategies that will drive revenue up again. However, the LGS team does not have the resources to carry out this project, so they turned to Jarvis Consulting to get data engineering and analysis services.  
