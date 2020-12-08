@@ -24,6 +24,8 @@ pipeline {
     stages {
         stage('Init') {
             steps {
+                sh 'cd springboot'
+                sh 'ls'
                 sh 'az login --service-principal --username ${AZ_USER} --password ${AZ_PWD} --tenant ${AZ_TENANT}'
             }
         }
