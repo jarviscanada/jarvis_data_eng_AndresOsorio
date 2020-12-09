@@ -1,4 +1,7 @@
-// Assumes trading-app is already deployed to the aks cluster
+// Pulls changes from https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio.git develop branch;
+// builds a new trading-app image reflecting those changes using ACR; and updates the deployment to contain the new image and discard the old one.
+// Assumes trading-psql and trading-app are already deployed to the aks-trading-app cluster and only changes to trading-app are made. 
+// aks-trading-app is the dev k8s cluster.
 pipeline {
     agent any
 

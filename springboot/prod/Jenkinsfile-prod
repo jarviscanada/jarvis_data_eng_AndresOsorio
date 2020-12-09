@@ -1,3 +1,6 @@
+// Pulls changes from https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio.git master branch;
+// Builds trading-psql and trading-app images from master branch and deploys them to the aks-trading-app-prod cluster.
+// aks-trading-app-prod is the prod k8s cluster.
 pipeline {
     agent any
 
@@ -46,10 +49,8 @@ pipeline {
                 //show cluster info for debugging purposes
                 sh 'kubectl cluster-info'
                 //Deploy the new image
-                dir('springboot') {
-                    sh 'ls'
-                    sh 'kubectl apply -k prod/'
-                }
+                sh 'ls'
+                sh 'kubectl apply -k springboot/prod/'
                 //Check result
                 sh 'kubectl get all'
             }
