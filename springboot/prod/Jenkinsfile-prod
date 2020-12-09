@@ -1,4 +1,3 @@
-// Assumes trading-app is already deployed to the aks cluster
 pipeline {
     agent any
 
@@ -6,20 +5,20 @@ pipeline {
         app_name = 'trading-app'
 
         //Init
-        AZ_USER=credentials('AZ_USER_DEV')
-        AZ_PWD=credentials('AZ_PWD_DEV')
-        AZ_TENANT=credentials('AZ_TENANT_DEV')
+        AZ_USER=credentials('AZ_USER_PROD')
+        AZ_PWD=credentials('AZ_PWD_PROD')
+        AZ_TENANT=credentials('AZ_TENANT_PROD')
 
         //Build
         ACR_NAME='onehoax'
-        //${BUILD_NUMBER} is a Jenkins built-in env https://bit.ly/32mySlQ
-        IMAGE_NAME="trading-app:${BUILD_NUMBER}"
+        PSQL_IMAGE="trading-psql:latest"
+        TRADING_IMAGE="trading-app:latest"
 
         //Deploy
         RESOURCE_GROUP='rg-trading-app-aks'
-        CLUSTER_NAME='aks-trading-app'
+        CLUSTER_NAME='aks-trading-app-prod'
         ACR_REPO='onehoax.azurecr.io'
-        DEPLOYMENT_NAME='deployment.apps/trading-app-dev'
+        DEPLOYMENT_NAME='deployment.apps/trading-app-prod'
     }
 
     stages {
@@ -31,8 +30,12 @@ pipeline {
         stage('Build') {
             steps {
                 dir('springboot') {
+                    dir('psql') {
+                        sh 'ls'
+                        sh 'az acr build --image ${PSQL_IMAGE} --registry $ACR_NAME --file Dockerfile .'
+                    }
                     sh 'ls'
-                    sh 'az acr build --image ${IMAGE_NAME} --registry $ACR_NAME --file Dockerfile .'
+                    sh 'az acr build --image ${TRADING_IMAGE} --registry $ACR_NAME --file Dockerfile .'
                 }
             }
         }
@@ -43,7 +46,10 @@ pipeline {
                 //show cluster info for debugging purposes
                 sh 'kubectl cluster-info'
                 //Deploy the new image
-                sh 'kubectl set image ${DEPLOYMENT_NAME} trading-app=${ACR_REPO}/${IMAGE_NAME}'
+                dir('springboot') {
+                    sh 'ls'
+                    sh 'kubectl apply -k prod/'
+                }
                 //Check result
                 sh 'kubectl get all'
             }
