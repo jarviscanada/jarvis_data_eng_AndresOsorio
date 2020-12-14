@@ -71,7 +71,7 @@
       "name": "Spark"
     },
     {
-      "description": "Not Started",
+      "description": "Migrated the [SpringBoot App](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/springboot) to the Azure Cloud; used Azure Kubernetes Service to create 2 identical Kubernetes clusters to serve as development and production environments; deployed the application, scaled it up/down as needed, and exposed it to the outside world by using the Kubernetes API; used Azure Container Registry to build/store Docker images for better integration with Azure services; ultimately, automated the integration and deployment process by developing CI/CD pipelines for each of the environments using Jenkins.",
       "git_url": "/cloud_devops",
       "name": "Cloud/DevOps"
     }
@@ -88,7 +88,7 @@
   "professional_experience": [
     {
       "company": "Jarvis Consulting Group",
-      "description": "Worked in a small scrum team developing Data Engineering projects. Successfully contributed to all stages of product Software Development Life Cycle through continuous participation in Scrum events and Agile best practices. Implemented projects using Java, Maven, SpringBoot, Bash, RDBMS/SQL, Python, Hadoop, Spark, Docker, Git/GitHub, and cloud services. Performed both integration and unit testing using JUnit and Mockito. Used a Linux environment (centOS) for development.",
+      "description": "Worked in a small scrum team developing Data Engineering projects. Successfully contributed to all stages of product Software Development Life Cycle through continuous participation in Scrum events and Agile best practices. Implemented projects using Java, Maven, SpringBoot, Bash, RDBMS/SQL, Python, Hadoop, Spark, Docker, Git/GitHub, Kubernetes, Jenkins, and cloud services. Performed both integration and unit testing using JUnit and Mockito. Used a Linux environment (centOS) for development.",
       "duration": "2020-present",
       "title": "Data Engineer"
     },
@@ -107,9 +107,13 @@
   ],
   "skills": {
     "competent": [
+      "Kubernetes",
+      "Jenkins",
+      "REST APIs",
+      "Microsoft Azure",
+      "Google Cloud Platform",
       "Python/PySpark/NumPy/Pandas",
       "Zeppelin/Databricks/Jupyter",
-      "REST APIs",
       "Eiffel",
       "C",
       "Go",
@@ -126,15 +130,16 @@
     "proficient": [
       "OOP",
       "Java",
+      "Maven",
+      "SpringBoot",
       "Linux/Bash",
       "RDBMS/SQL",
-      "Spark",
-      "Hadoop",
-      "SpringBoot",
-      "Maven",
       "Docker",
       "Git/GitHub",
-      "Agile/Scrum"
+      "Agile/Scrum",
+      "Spark",
+      "Hadoop",
+      "Integration/Unit Testing"
     ]
   },
   "summary": "Recent Computer Science graduate with a background in Behavior Analysis; I have experience in a wide variety of fields that have provided me with the right professional and personal skills needed to succeed in the software industry. The amount of data being created every year is growing at an exponential rate and will continue to do so; Data Engineering resonates with me because there is a need for qualified individuals to make sense of it all and I love both engineering and the patterns that arise from data. I am responsible, reliable, organized, disciplined, hard-working, goal-oriented, and always eager to learn."
