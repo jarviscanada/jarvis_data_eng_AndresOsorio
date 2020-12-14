@@ -71,7 +71,7 @@
       "name": "Spark"
     },
     {
-      "description": "Migrated the [SpringBoot App](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/springboot) to the Azure Cloud; used Azure Kubernetes Service to create 2 identical Kubernetes clusters to serve as development and production environments; deployed the application, scaled it up/down as needed, and exposed it to the outside world by using the Kubernetes API; used Azure Container Registry to build/store Docker images for better integration with Azure services; ultimately, automated the integration and deployment process by developing CI/CD pipelines for each of the environments using Jenkins.",
+      "description": "Deployed the [SpringBoot App](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/springboot) to the Azure Cloud; used Azure Kubernetes Service to create 2 identical Kubernetes clusters to serve as development and production environments; deployed the application, scaled it out/in as needed, and exposed it to the outside world by using the Kubernetes API; used Azure Container Registry to build/store Docker images for better integration with Azure services; ultimately, automated the integration and deployment process by developing CI/CD pipelines for each of the environments using Jenkins.",
       "git_url": "/cloud_devops",
       "name": "Cloud/DevOps"
     }
@@ -114,10 +114,10 @@
       "Google Cloud Platform",
       "Python/PySpark/NumPy/Pandas",
       "Zeppelin/Databricks/Jupyter",
+      "HTML/CSS/JavaScript",
       "Eiffel",
       "C",
       "Go",
-      "HTML/CSS/JavaScript",
       "Android Development"
     ],
     "familiar": [
@@ -134,8 +134,8 @@
       "SpringBoot",
       "Linux/Bash",
       "RDBMS/SQL",
-      "Docker",
       "Git/GitHub",
+      "Docker",
       "Agile/Scrum",
       "Spark",
       "Hadoop",

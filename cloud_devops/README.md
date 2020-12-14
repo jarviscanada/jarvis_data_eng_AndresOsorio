@@ -6,7 +6,7 @@ Microsoft Azure cloud; this is a PoC to re-assure such a decision.
 The project uses Azure APIs to deploy the
 [SpringBoot App](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/springboot)
 to Kubernetes clusters managed by Azure. Migrating to the cloud has the following benefits:
-- Easy to scale up or down
+- Easy to scale out/up or in/down
 - High Availability
 - Fault Tolerance
 - Replacing Capital Expenditure by Operational Expenditure
@@ -35,8 +35,8 @@ I developed a CI/CD pipeline for each of the environments using Jenkins:
 ## Application Architecture
 Each of the Kubernetes clusters (environments) are exactly the same:
 they are created using the Azure Kubernetes Service with Azure scale
-sets (one node). The app is deployed to the one node of the clusters, 
-scaled up or down as needed, and exposed to the outside world through
+sets (one node). The application is deployed to the one node of the clusters, 
+scaled out/in as needed, and exposed to the outside world through
 Kubernetes services/load-balancer. The Azure Kubernetes Service controls
 the Kubernetes control plane and I interacted with it through the
 `Azure CLI` and `kubectl`. The continuous integration and deployment 
@@ -69,5 +69,5 @@ Production environment CI/CD pipeline:
 - Use a bigger cluster to test High Availability and Fault Tolerance
 - Re-build the project with another managed Kubernetes service
    (GCP, AWS) to compare 
-- Explore Kubernetes and Jenkins more in depth to build more
+- Explore Kubernetes and Jenkins more in-depth to build more
    complicated CI/CD pipelines
