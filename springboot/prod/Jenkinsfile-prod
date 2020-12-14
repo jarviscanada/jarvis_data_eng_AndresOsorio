@@ -1,0 +1,59 @@
+// Pulls changes from https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio.git master branch;
+// Builds trading-psql and trading-app images from master branch and deploys them to the aks-trading-app-prod cluster.
+// aks-trading-app-prod is the prod k8s cluster.
+pipeline {
+    agent any
+
+    environment {
+        app_name = 'trading-app'
+
+        //Init
+        AZ_USER=credentials('AZ_USER_PROD')
+        AZ_PWD=credentials('AZ_PWD_PROD')
+        AZ_TENANT=credentials('AZ_TENANT_PROD')
+
+        //Build
+        ACR_NAME='onehoax'
+        PSQL_IMAGE="trading-psql:latest"
+        TRADING_IMAGE="trading-app:latest"
+
+        //Deploy
+        RESOURCE_GROUP='rg-trading-app-aks'
+        CLUSTER_NAME='aks-trading-app-prod'
+        ACR_REPO='onehoax.azurecr.io'
+        DEPLOYMENT_NAME='deployment.apps/trading-app-prod'
+    }
+
+    stages {
+        stage('Init') {
+            steps {
+                sh 'az login --service-principal --username ${AZ_USER} --password ${AZ_PWD} --tenant ${AZ_TENANT}'
+            }
+        }
+        stage('Build') {
+            steps {
+                dir('springboot') {
+                    dir('psql') {
+                        sh 'ls'
+                        sh 'az acr build --image ${PSQL_IMAGE} --registry $ACR_NAME --file Dockerfile .'
+                    }
+                    sh 'ls'
+                    sh 'az acr build --image ${TRADING_IMAGE} --registry $ACR_NAME --file Dockerfile .'
+                }
+            }
+        }
+        stage('Deploy') {
+            steps {
+                //Connect to AKS
+                sh 'az aks get-credentials --name $CLUSTER_NAME --resource-group $RESOURCE_GROUP'
+                //show cluster info for debugging purposes
+                sh 'kubectl cluster-info'
+                //Deploy the new image
+                sh 'ls'
+                sh 'kubectl apply -k springboot/prod/'
+                //Check result
+                sh 'kubectl get all'
+            }
+        }
+    }
+}

@@ -4,9 +4,9 @@ Recent Computer Science graduate with a background in Behavior Analysis; I have 
 
 ## Skills
 
-**Proficient:** OOP, Java, Linux/Bash, RDBMS/SQL, Spark, Hadoop, SpringBoot, Maven, Docker, Git/GitHub, Agile/Scrum
+**Proficient:** OOP, Java, Maven, SpringBoot, Linux/Bash, RDBMS/SQL, Git/GitHub, Docker, Agile/Scrum, Spark, Hadoop, Integration/Unit Testing
 
-**Competent:** Python/PySpark/NumPy/Pandas, Zeppelin/Databricks/Jupyter, REST APIs, Eiffel, C, Go, HTML/CSS/JavaScript, Android Development
+**Competent:** Kubernetes, Jenkins, REST APIs, Microsoft Azure, Google Cloud Platform, Python/PySpark/NumPy/Pandas, Zeppelin/Databricks/Jupyter, HTML/CSS/JavaScript, Eiffel, C, Go, Android Development
 
 **Familiar:** Functional Programming, Blockchain, Operating Systems, AI/ML, CyberSecurity
 
@@ -31,7 +31,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_AndresOsor
 
 **Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/spark)]: Evaluated Spark's functionality and performance with Zeppelin on Hadoop and re-implemented the [Data Analytics project](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/python_data_wrangling) using Azure Databricks and Spark Structured APIs; performed parallel data analytics on a cluster against customer transactional data to answer several business questions and identify important customer categories to help the client organization develop targeted marketing strategies.
 
-**Cloud/DevOps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/cloud_devops)]: Not Started
+**Cloud/DevOps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/cloud_devops)]: Deployed the [SpringBoot App](https://github.com/jarviscanada/jarvis_data_eng_AndresOsorio/tree/master/springboot) to the Azure Cloud; used Azure Kubernetes Service to create 2 identical Kubernetes clusters to serve as development and production environments; deployed the application, scaled it out/in as needed, and exposed it to the outside world by using the Kubernetes API; used Azure Container Registry to build/store Docker images for better integration with Azure services; ultimately, automated the integration and deployment process by developing CI/CD pipelines for each of the environments using Jenkins.
 
 
 ## Highlighted Projects
@@ -42,7 +42,7 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_AndresOsor
 
 ## Professional Experiences
 
-**Data Engineer, Jarvis Consulting Group (2020-present)**: Worked in a small scrum team developing Data Engineering projects. Successfully contributed to all stages of product Software Development Life Cycle through continuous participation in Scrum events and Agile best practices. Implemented projects using Java, Maven, SpringBoot, Bash, RDBMS/SQL, Python, Hadoop, Spark, Docker, Git/GitHub, and cloud services. Performed both integration and unit testing using JUnit and Mockito. Used a Linux environment (centOS) for development.
+**Data Engineer, Jarvis Consulting Group (2020-present)**: Worked in a small scrum team developing Data Engineering projects. Successfully contributed to all stages of product Software Development Life Cycle through continuous participation in Scrum events and Agile best practices. Implemented projects using Java, Maven, SpringBoot, Bash, RDBMS/SQL, Python, Hadoop, Spark, Docker, Git/GitHub, Kubernetes, Jenkins, and cloud services. Performed both integration and unit testing using JUnit and Mockito. Used a Linux environment (centOS) for development.
 
 **Social Worker, Community Living Toronto (2015-2017)**: Worked in the TRE ADD (Treatment, Research, and Education for Autism and Developmental Disabilities) program in a respite house. Provided patients support with their daily activities (Hygiene, feeding, and medication) and led behavioral programming to reduce problem behaviors and reinforce appropriate ones.
 
